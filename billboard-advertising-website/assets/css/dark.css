@@ -1,0 +1,92 @@
+html[data-theme="dark"] {
+  --bg-color: #020617;
+  --surface-color: #0B1120;
+  --border-color: rgba(255, 255, 255, 0.08);
+  
+  --primary-color: #0F172A;
+  --secondary-color: #94A3B8;
+  --accent-color: #38BDF8;
+  --highlight-color: #60A5FA;
+  
+  --text-primary: #E2E8F0;
+  --text-secondary: #94A3B8;
+  --text-muted: #475569;
+  
+  --glass-bg: rgba(11, 17, 32, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-shadow: rgba(0, 0, 0, 0.4);
+  
+  --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+  --card-shadow-lg: 0 20px 40px -5px rgba(0, 0, 0, 0.7);
+
+  /* Footer overrides for Dark Mode */
+  --footer-bg: #0F172A;
+  --footer-text: #94A3B8;
+  --footer-heading: #FFFFFF;
+  --footer-border: rgba(255, 255, 255, 0.08);
+  --footer-link: #94A3B8;
+  --footer-link-hover: #FFFFFF;
+  --footer-bottom-border: #1E293B;
+  --footer-input-bg: #1E293B;
+  --footer-input-border: #334155;
+  --footer-input-text: #FFFFFF;
+}
+
+/* Glassmorphism overrides for specific cards */
+html[data-theme="dark"] .glass-panel {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Glow effects in Dark Mode */
+html[data-theme="dark"] .glow-btn {
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.35);
+}
+html[data-theme="dark"] .glow-btn:hover {
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
+}
+
+html[data-theme="dark"] .glow-card:hover {
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
+}
+
+/* Input Fields overrides in Dark Mode */
+html[data-theme="dark"] .form-control {
+  background-color: rgba(11, 17, 32, 0.5);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+html[data-theme="dark"] .form-control:focus {
+  background-color: rgba(11, 17, 32, 0.8);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+}
+
+/* Dark mode custom scrollbars */
+html[data-theme="dark"] ::-webkit-scrollbar {
+  width: 8px;
+}
+html[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #020617;
+}
+html[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+html[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Dynamic Interactive Dashboard Graphics overrides */
+html[data-theme="dark"] .grid-dot-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Map markers neon glow animation */
+html[data-theme="dark"] .map-marker-pin {
+  background-color: var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
+}

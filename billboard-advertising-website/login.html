@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdVantage OOH | Media Buyer Login Portal</title>
+  <meta name="description"
+    content="Secure login for agencies, brands, and media buyers. Access regional dashboard analytics and track screen flight schedules.">
+  <link class="styling-icons" rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <script src="assets/js/theme-toggle.js"></script>
+</head>
+
+<body style="min-height: 100vh; display: flex; flex-direction: column; position: relative;">
+  <!-- Page Loader -->
+  <div class="page-loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Floating Theme and RTL Toggles -->
+  <div
+    style="position: absolute; top: 20px; right: 20px; z-index: 1000; display: flex; gap: 0.5rem; align-items: center;">
+    <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Theme">
+      <i class="bi bi-moon-stars-fill"></i>
+    </button>
+    <button id="rtl-toggle-btn" class="theme-toggle-btn" aria-label="Toggle RTL Layout">
+      <i class="bi bi-translate"></i>
+    </button>
+  </div>
+
+  <!-- Login Main Card Form -->
+  <main
+    style="flex-grow: 1; display: flex; align-items: center; justify-content: center; padding: 2rem 0; background: radial-gradient(circle at 50% 50%, rgba(37,99,235,0.05) 0%, transparent 60%);">
+    <div class="container d-flex justify-content-center">
+      <div class="card glass-panel p-4" style="max-width: 420px; width: 100%; border: 1px solid var(--border-color);">
+        <div class="text-center mb-4">
+          <a href="index.html" class="logo-link justify-content-center mb-3">
+            <i class="bi bi-broadcast"></i> AD<span>VANTAGE</span>
+          </a>
+          <h2 style="font-family: var(--font-heading); margin-bottom: 0.5rem;">Access Buyer Portal</h2>
+          <p style="font-size: 0.85rem; color: var(--text-secondary);">Manage OOH campaign statistics and reserve
+            screens</p>
+        </div>
+
+        <form action="index.html#dashboard-preview" method="GET">
+          <div class="form-group">
+            <label class="form-label" for="login-email">Work Email</label>
+            <input type="email" id="login-email" class="form-control" placeholder="buyer@company.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="login-pass">Password</label>
+            <input type="password" id="login-pass" class="form-control" placeholder="**********" required>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mb-4" style="font-size: 0.8rem;">
+            <div>
+              <input type="checkbox" id="login-rem">
+              <label for="login-rem" style="color: var(--text-secondary);">Remember me</label>
+            </div>
+            <a href="#" style="font-weight: 600;">Forgot Password?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100 glow-btn mb-3">Sign In to Dashboard</button>
+
+          <div class="text-center" style="font-size: 0.85rem; color: var(--text-secondary);">
+            Don't have a buyer account? <a href="signup.html" style="font-weight: 600;">Register Account</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

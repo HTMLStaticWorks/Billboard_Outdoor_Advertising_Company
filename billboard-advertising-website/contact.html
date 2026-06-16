@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdVantage OOH | Contact Us & Request RFP Proposal</title>
+  <meta name="description" content="Get in touch with our media buying strategists. Submit an RFP to receive a custom traffic-data billboard campaign plan.">
+  <link class="styling-icons" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <script src="assets/js/theme-toggle.js"></script>
+</head>
+<body>
+  <!-- Page Loader -->
+  <div class="page-loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky-header">
+    <div class="container">
+      <div class="navbar-container">
+        <a href="index.html" class="logo-link">
+          <i class="bi bi-broadcast"></i> AD<span>VANTAGE</span>
+        </a>
+        <button class="menu-toggle-btn" id="menu-toggle" aria-label="Toggle Navigation">
+          <i class="bi bi-list"></i>
+        </button>
+        <ul class="nav-links">
+          <li class="nav-item has-dropdown">
+            <a href="#" class="nav-link">Home <i class="bi bi-chevron-down"></i></a>
+            <div class="nav-dropdown">
+              <a href="index.html" class="dropdown-item">Home 1 (Enterprise)</a>
+              <a href="home-2.html" class="dropdown-item">Home 2 (Hotspots)</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="inventory.html" class="nav-link">Inventory</a>
+          </li>
+          <li class="nav-item">
+            <a href="digital-billboards.html" class="nav-link">Digital Billboards</a>
+          </li>
+          <li class="nav-item">
+            <a href="transit-advertising.html" class="nav-link">Transit Advertising</a>
+          </li>
+          <li class="nav-item">
+            <a href="blog.html" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link active">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+          </li>
+        </ul>
+        <div class="nav-actions">
+          <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <button id="rtl-toggle-btn" class="theme-toggle-btn" aria-label="Toggle RTL Layout">
+            <i class="bi bi-translate"></i>
+          </button>
+          <a href="login.html" class="btn btn-secondary btn-sm d-none d-md-inline-flex">Login</a>
+          <a href="signup.html" class="btn btn-highlight btn-sm glow-btn"><i class="bi bi-person-plus"></i> Signup</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section style="background: linear-gradient(180deg, var(--surface-color) 0%, transparent 100%); padding: 4rem 0 2rem 0;">
+    <div class="container text-center">
+      <span class="section-subtitle">Get in Touch</span>
+      <h1 class="section-title">Request OOH Campaign Proposal</h1>
+      <p class="section-desc" style="max-width: 500px; margin: 0 auto;">Submit your marketing target criteria to receive customized billboard recommendations and reach indexes.</p>
+    </div>
+  </section>
+
+  <!-- RFP Contact Form & Coordinate Selection -->
+  <section style="padding: 2rem 0 var(--spacing-lg) 0;">
+    <div class="container">
+      <div class="row gy-5">
+        <!-- Contact Details & Coordinate Hotspots -->
+        <div class="col-lg-5">
+          <h3 style="font-family: var(--font-heading); margin-bottom: 1.25rem;">Our Central Offices</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 2.5rem;">
+            Whether you are coordinating regional brand displays or launching global campaigns, reach out to our OOH team branches directly.
+          </p>
+
+          <div class="d-flex flex-column gap-3 mb-4">
+            <div class="card p-3 map-hotspot-card active-spot" data-coords="34.0522, -118.2437" data-map-url="https://maps.google.com/maps?q=8840%20Wilshire%20Blvd,%20Beverly%20Hills,%20CA&t=&z=13&ie=UTF8&iwloc=&output=embed" style="cursor: pointer; transition: var(--transition);">
+              <h5 class="m-0"><i class="bi bi-geo-alt-fill" style="color: var(--accent-color);"></i> Los Angeles Branch</h5>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem; margin-bottom: 0;">8840 Wilshire Blvd, Beverly Hills, CA | (555) 234-8902</p>
+            </div>
+            
+            <div class="card p-3 map-hotspot-card" data-coords="40.7128, -74.0060" data-map-url="https://maps.google.com/maps?q=1500%20Broadway,%20Times%20Square,%20NY&t=&z=13&ie=UTF8&iwloc=&output=embed" style="cursor: pointer; transition: var(--transition);">
+              <h5 class="m-0"><i class="bi bi-geo-alt-fill" style="color: var(--accent-color);"></i> New York Branch</h5>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem; margin-bottom: 0;">1500 Broadway, Times Square, NY | (555) 890-4322</p>
+            </div>
+          </div>
+
+          <div class="card glass-panel p-3 mb-4">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-compass" style="color: var(--accent-color);"></i>
+              <span style="font-size: 0.85rem; font-weight: 600;">Selected GPS Coordinates: <span id="current-coordinate-span" style="color: var(--accent-color);">34.0522, -118.2437</span></span>
+            </div>
+          </div>
+
+          <!-- Branch Locator Map Card -->
+          <div class="card glass-panel p-3 mb-4" style="border: 1px solid var(--border-color);">
+            <h5 style="font-family: var(--font-heading); margin-bottom: 1rem; font-size: 1.05rem;"><i class="bi bi-map-fill" style="color: var(--accent-color);"></i> Branch Office Locator</h5>
+            <div class="map-canvas-container" style="border: 1px solid var(--border-color); height: 280px; position: relative; overflow: hidden; border-radius: var(--card-radius);">
+              <iframe id="google-map-iframe" 
+                      src="https://maps.google.com/maps?q=8840%20Wilshire%20Blvd,%20Beverly%20Hills,%20CA&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                      width="100%" 
+                      height="100%" 
+                      style="border:0;" 
+                      allowfullscreen="" 
+                      loading="lazy" 
+                      referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+
+          <!-- Social Connections Card -->
+          <div class="card glass-panel p-3">
+            <h6 style="font-family: var(--font-heading); margin-bottom: 0.5rem; font-size: 0.95rem; letter-spacing: 0.5px; text-transform: uppercase;">Connect With Us</h6>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 1rem;">Stay updated with our programmatic media rates and OOH case studies.</p>
+            <div class="d-flex gap-3">
+              <a href="#" class="social-icon-btn" aria-label="Twitter-X"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" class="social-icon-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="social-icon-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+              <a href="#" class="social-icon-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="social-icon-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Proposal RFP Form -->
+        <div class="col-lg-7">
+          <div class="card p-4 glass-panel" style="border: 1px solid var(--border-color);">
+            <h4 style="font-family: var(--font-heading); margin-bottom: 1.5rem;"><i class="bi bi-file-earmark-text"></i> Proposal Request Form</h4>
+            
+            <form id="rfq-contact-form">
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="form-label" for="rfq-name">Your Full Name</label>
+                    <input type="text" id="rfq-name" class="form-control" placeholder="Marcus Aurelius" required>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="form-label" for="rfq-company">Brand / Agency Name</label>
+                    <input type="text" id="rfq-company" class="form-control" placeholder="Acme Corp" required>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="form-label" for="rfq-email">Corporate Email</label>
+                    <input type="email" id="rfq-email" class="form-control" placeholder="buyer@agency.com" required>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="form-label" for="rfq-budget">Target Flight Budget</label>
+                    <select id="rfq-budget" class="form-control">
+                      <option value="1000-5000">$1,000 - $5,000</option>
+                      <option value="5000-15000">$5,000 - $15,000</option>
+                      <option value="15000+">Over $15,000</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label class="form-label" for="rfq-message">Describe Target Audience Regions & Media Goals</label>
+                    <textarea id="rfq-message" class="form-control" placeholder="e.g. Launching retail footwear. Targeting high-traffic metro hubs around NYC downtown areas..." required></textarea>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary w-100 mt-2 glow-btn">Submit Campaign Request</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <a href="index.html" class="footer-logo">
+            <i class="bi bi-broadcast"></i> AD<span>VANTAGE</span>
+          </a>
+          <p style="font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.6;">
+            AdVantage is a leading developer and operator of high-impact digital billboard and out-of-home (OOH) media display networks globally.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="#" style="color: #94A3B8; font-size: 1.25rem;"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" style="color: #94A3B8; font-size: 1.25rem;"><i class="bi bi-linkedin"></i></a>
+            <a href="#" style="color: #94A3B8; font-size: 1.25rem;"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-2 offset-lg-1">
+          <h5 class="footer-column-title">Solutions</h5>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="digital-billboards.html">Digital Billboards</a></li>
+            <li class="footer-link-item"><a href="inventory.html">Highway Bulletins</a></li>
+            <li class="footer-link-item"><a href="transit-advertising.html">Subway & Airport</a></li>
+            <li class="footer-link-item"><a href="transit-advertising.html">Bus Shelters</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-2">
+          <h5 class="footer-column-title">Resources</h5>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="blog.html">Marketing Guides</a></li>
+            <li class="footer-link-item"><a href="case-studies.html">Case Studies</a></li>
+            <li class="footer-link-item"><a href="contact.html">Request RFP</a></li>
+            <li class="footer-link-item"><a href="404.html">Support Help</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-3">
+          <h5 class="footer-column-title">Newsletter</h5>
+          <p style="font-size: 0.85rem; margin-bottom: 1rem;">Receive media rates and regional inventory updates.</p>
+          <form style="display: flex; gap: 0.5rem;">
+            <input type="email" placeholder="Enter email" style="background: #1E293B; border: 1px solid #334155; color: #FFFFFF; font-size: 0.85rem; padding: 0.5rem 0.75rem; border-radius: 4px; outline: none; flex-grow: 1;">
+            <button type="submit" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem; border-radius: 4px;"><i class="bi bi-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p style="font-size: 0.8rem; margin: 0;">&copy; 2026 AdVantage Media Network. All rights reserved.</p>
+        <div class="d-flex gap-3" style="font-size: 0.8rem;">
+          <a href="#" style="color: #94A3B8;">Privacy Policy</a>
+          <a href="#" style="color: #94A3B8;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+
