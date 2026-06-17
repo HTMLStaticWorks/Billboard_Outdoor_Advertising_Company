@@ -76,7 +76,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.2;
   color: var(--text-primary);
 }
@@ -122,14 +122,20 @@ header.sticky-header {
   font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-primary) !important;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  text-decoration: none;
+  transition: var(--transition);
 }
 
 .logo-link span {
-  color: var(--accent-color);
+  color: var(--accent-color) !important;
+}
+
+.logo-link i {
+  color: var(--accent-color) !important;
 }
 
 .nav-links {
@@ -240,7 +246,7 @@ header.sticky-header {
   align-items: center;
   justify-content: center;
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 0.95rem;
   padding: 0.65rem 1.5rem;
   border-radius: var(--btn-radius);
@@ -322,7 +328,7 @@ section {
   color: var(--accent-color);
   font-family: var(--font-heading);
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 0.75rem;
@@ -392,15 +398,23 @@ footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
 
 .footer-logo {
   font-family: var(--font-heading);
-  font-weight: 700;
   font-size: 1.5rem;
-  color: var(--footer-heading);
+  font-weight: 700;
+  color: var(--text-primary) !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   margin-bottom: 1.25rem;
-  display: inline-block;
+  text-decoration: none;
+  transition: var(--transition);
 }
 
 .footer-logo span {
-  color: var(--accent-color);
+  color: var(--accent-color) !important;
+}
+
+.footer-logo i {
+  color: var(--accent-color) !important;
 }
 
 .footer-column-title {
@@ -480,7 +494,7 @@ footer form input[type="email"]::placeholder {
 .form-label {
   display: block;
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 0.5rem;
   color: var(--text-primary);
 }
@@ -511,13 +525,13 @@ textarea.form-control {
 .hero-sec {
   position: relative;
   overflow: hidden;
-  padding: var(--spacing-xl) 0;
+  padding: 5rem 0;
   background: radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
 }
 
 .hero-title {
-  font-size: 3.5rem;
-  line-height: 1.1;
+  font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+  line-height: 1.15;
   letter-spacing: -1px;
   margin-bottom: 1.5rem;
 }
@@ -553,7 +567,7 @@ textarea.form-control {
 .stat-number {
   font-family: var(--font-heading);
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--accent-color);
   line-height: 1;
   margin-bottom: 0.5rem;
@@ -604,6 +618,7 @@ textarea.form-control {
     box-shadow: -10px 0 30px rgba(0,0,0,0.1);
     transition: right 0.4s ease;
     z-index: 1099;
+    overflow-y: auto;
   }
   
   .nav-links.active {
@@ -634,7 +649,41 @@ textarea.form-control {
   .nav-item:hover .nav-dropdown {
     display: block;
   }
+  
+  /* Mobile Actions layout adjustments inside hamburger menu drawer */
+  .navbar-container > .nav-actions {
+    display: none !important;
+  }
+
+  .nav-links .nav-actions {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .nav-links .nav-actions .theme-toggle-btn {
+    flex-grow: 1;
+    border: 1px solid var(--border-color);
+    border-radius: var(--btn-radius);
+    padding: 0.6rem;
+    justify-content: center;
+  }
+  
+  .nav-links .nav-actions .btn {
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  .nav-links .nav-actions .btn.d-none {
+    display: inline-flex !important;
+  }
 }
+
 
 /* ==========================================================================
    Global Layout & Spacing Utilities (Bootstrap-Equivalent)
@@ -973,14 +1022,14 @@ html[dir="rtl"] .offset-lg-1 {
 
 .slider-label {
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-primary);
   font-size: 1rem;
 }
 
 .slider-value {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 500;
   color: var(--accent-color);
   font-size: 1.25rem;
 }
@@ -1050,7 +1099,7 @@ html[dir="rtl"] .offset-lg-1 {
 .metric-number {
   font-family: var(--font-heading);
   font-size: 1.75rem;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text-primary);
   margin-bottom: 0.25rem;
 }
@@ -1149,7 +1198,7 @@ html[dir="rtl"] .offset-lg-1 {
   background: var(--accent-color);
   color: #FFFFFF;
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 500;
   font-size: 0.85rem;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
@@ -1265,6 +1314,87 @@ html[data-theme="light"] .campaign-specs-wrapper {
 html[data-theme="light"] .campaign-specs-wrapper:hover {
   background: #F1F5F9;
 }
+
+/* ==========================================================================
+   Social Login Buttons
+   ========================================================================== */
+.btn-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: var(--btn-radius);
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-color);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.btn-social:hover {
+  background-color: var(--border-color);
+  border-color: var(--accent-color);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.btn-social svg {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.btn-social:hover svg {
+  transform: scale(1.1);
+}
+
+/* Specific styling overrides for dark mode */
+html[data-theme="dark"] .btn-social {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+html[data-theme="dark"] .btn-social:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   FAQ Accordion Styling
+   ========================================================================== */
+.faq-item {
+  transition: var(--transition);
+}
+
+.faq-item[open] {
+  border-color: var(--accent-color) !important;
+  box-shadow: var(--card-shadow-lg);
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question {
+  user-select: none;
+}
+
+.faq-toggle-icon {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.faq-item[open] .faq-toggle-icon {
+  transform: rotate(45deg);
+  color: var(--accent-color);
+}
+
+
 
 
 

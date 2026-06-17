@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AdVantage OOH | Geographic Discovery & Location Hotspots</title>
-  <meta name="description" content="Discover premium billboards, LED screens, and airport transit wraps by city hotspots. Interactive location discovery maps.">
+  <meta name="description"
+    content="Discover premium billboards, LED screens, and airport transit wraps by city hotspots. Interactive location discovery maps.">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -12,6 +15,7 @@
   <link rel="stylesheet" href="assets/css/animations.css">
   <script src="assets/js/theme-toggle.js"></script>
 </head>
+
 <body>
   <!-- Page Loader -->
   <div class="page-loader">
@@ -70,30 +74,34 @@
   </header>
 
   <!-- Alternative Hero Section with Slideshow / Video glow style -->
-  <section class="hero-sec" style="background: radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.05) 0%, transparent 60%);">
+  <section class="hero-sec"
+    style="background: radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.05) 0%, transparent 60%);">
     <div class="grid-dot-pattern"></div>
     <div class="container relative-z-2">
       <div class="row align-items-center gy-5">
         <div class="col-lg-6 order-last order-lg-first">
           <div class="card glass-panel glow-card fade-up-init p-2" style="border-radius: var(--card-radius);">
             <div class="card-img-wrapper" style="border-radius: var(--card-radius); aspect-ratio: 16/10;">
-              <img src="assets/images/inventory/billboard-highway.png" alt="Highway Billboard Placements" class="card-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22500%22 style=%22background:%230b1120;%22><text x=%2250%25%22 y=%2250%25%22 fill=%22%2338bdf8%22 font-size=%2224%22 font-family=%22sans-serif%22 text-anchor=%22middle%22>Highway Billboard Network</text></svg>'">
-              <div style="position: absolute; top: 15px; right: 15px; background: rgba(37,99,235,0.9); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">
+              <img src="assets/images/inventory/billboard-highway.png" alt="Highway Billboard Placements"
+                class="card-img"
+                onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22500%22 style=%22background:%230b1120;%22><text x=%2250%25%22 y=%2250%25%22 fill=%22%2338bdf8%22 font-size=%2224%22 font-family=%22sans-serif%22 text-anchor=%22middle%22>Highway Billboard Network</text></svg>'">
+              <div
+                style="position: absolute; top: 15px; right: 15px; background: rgba(37,99,235,0.9); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 500;">
                 HIGHWAY INTERCHANGE A1
               </div>
             </div>
           </div>
         </div>
         <div class="col-lg-6">
-          <div class="hero-title">
-            <h1 class="fade-up-init">Locate Your</h1>
-            <h1 class="fade-up-init">Perfect Audience</h1>
-            <h1 class="fade-up-init"><span>By Target Hotspots.</span></h1>
-          </div>
+          <h1 class="hero-title fade-up-init">
+            Locate Your Perfect Audience<br>
+            <span>By Target Hotspots.</span>
+          </h1>
           <p class="hero-subtitle fade-up-init">
-            Find premium digital displays and high-impact traditional billboards located in major commercial centers, traffic junctions, and retail corridors.
+            Find premium digital displays and high-impact traditional billboards located in major commercial centers,
+            traffic junctions, and retail corridors.
           </p>
-          
+
           <!-- Live Inventory Quick Lookup Widget -->
           <div class="card glass-panel p-3 fade-up-init mb-4" style="border: 1px solid var(--border-color);">
             <form action="inventory.html" method="GET" class="row g-2">
@@ -114,7 +122,8 @@
                 </select>
               </div>
               <div class="col-sm-4">
-                <button type="submit" class="btn btn-primary btn-sm w-100" style="padding: 0.6rem;"><i class="bi bi-search"></i> Check Spots</button>
+                <button type="submit" class="btn btn-primary btn-sm w-100" style="padding: 0.6rem;"><i
+                    class="bi bi-search"></i> Check Spots</button>
               </div>
             </form>
           </div>
@@ -124,38 +133,49 @@
   </section>
 
   <!-- Interactive Location Discovery Map (MANDATORY REQUIREMENT) -->
-  <section style="background-color: var(--surface-color); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+  <section
+    style="background-color: var(--surface-color); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
     <div class="container">
       <div class="section-title-wrapper">
         <span class="section-subtitle">Geographic Targeting</span>
         <h2 class="section-title">Interactive Location Hotspots</h2>
-        <p class="section-desc">Click on any of our premium city hotspots to view immediate traffic indices, GPS coordinates, and media availability.</p>
+        <p class="section-desc">Click on any of our premium city hotspots to view immediate traffic indices, GPS
+          coordinates, and media availability.</p>
       </div>
       <div class="row g-4">
         <div class="col-lg-4">
           <div class="d-flex flex-column gap-3">
-            <div class="card p-3 map-hotspot-card active-spot" data-coords="34.0928, -118.3287" style="cursor: pointer; transition: var(--transition);">
+            <div class="card p-3 map-hotspot-card active-spot" data-coords="34.0928, -118.3287"
+              style="cursor: pointer; transition: var(--transition);">
               <div class="d-flex justify-content-between align-items-center">
                 <h5 class="m-0">Sunset Blvd Corridor</h5>
-                <span class="badge" style="background: rgba(56,189,248,0.1); color: var(--accent-color); font-size: 0.75rem; padding: 0.25rem 0.5rem;">LA</span>
+                <span class="badge"
+                  style="background: rgba(56,189,248,0.1); color: var(--accent-color); font-size: 0.75rem; padding: 0.25rem 0.5rem;">LA</span>
               </div>
-              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem; margin-bottom: 0;">Daily Traffic: 95K cars/day | 3 Digital screens available.</p>
-            </div>
-            
-            <div class="card p-3 map-hotspot-card" data-coords="40.7580, -73.9855" style="cursor: pointer; transition: var(--transition);">
-              <div class="d-flex justify-content-between align-items-center">
-                <h5 class="m-0">Times Square Hub</h5>
-                <span class="badge" style="background: rgba(56,189,248,0.1); color: var(--accent-color); font-size: 0.75rem; padding: 0.25rem 0.5rem;">NYC</span>
-              </div>
-              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem; margin-bottom: 0;">Daily Traffic: 380K pedest./day | 5 screens available.</p>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem; margin-bottom: 0;">Daily
+                Traffic: 95K cars/day | 3 Digital screens available.</p>
             </div>
 
-            <div class="card p-3 map-hotspot-card" data-coords="41.8818, -87.6231" style="cursor: pointer; transition: var(--transition);">
+            <div class="card p-3 map-hotspot-card" data-coords="40.7580, -73.9855"
+              style="cursor: pointer; transition: var(--transition);">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="m-0">Times Square Hub</h5>
+                <span class="badge"
+                  style="background: rgba(56,189,248,0.1); color: var(--accent-color); font-size: 0.75rem; padding: 0.25rem 0.5rem;">NYC</span>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem; margin-bottom: 0;">Daily
+                Traffic: 380K pedest./day | 5 screens available.</p>
+            </div>
+
+            <div class="card p-3 map-hotspot-card" data-coords="41.8818, -87.6231"
+              style="cursor: pointer; transition: var(--transition);">
               <div class="d-flex justify-content-between align-items-center">
                 <h5 class="m-0">Michigan Avenue Bridge</h5>
-                <span class="badge" style="background: rgba(56,189,248,0.1); color: var(--accent-color); font-size: 0.75rem; padding: 0.25rem 0.5rem;">CHI</span>
+                <span class="badge"
+                  style="background: rgba(56,189,248,0.1); color: var(--accent-color); font-size: 0.75rem; padding: 0.25rem 0.5rem;">CHI</span>
               </div>
-              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem; margin-bottom: 0;">Daily Traffic: 62K commuters/day | 2 traditional bulletins.</p>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem; margin-bottom: 0;">Daily
+                Traffic: 62K commuters/day | 2 traditional bulletins.</p>
             </div>
           </div>
         </div>
@@ -163,25 +183,31 @@
           <div class="map-canvas-container" style="border: 1px solid var(--border-color);">
             <!-- Mock Vector Map Graphic with glowing dots -->
             <div class="grid-dot-pattern"></div>
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.08) 0%, transparent 70%); display: flex; align-items: center; justify-content: center;">
+            <div
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.08) 0%, transparent 70%); display: flex; align-items: center; justify-content: center;">
               <!-- Fake stylized vector continent map layout in background using inline SVG -->
               <svg width="100%" height="100%" viewBox="0 0 800 450" style="opacity: 0.25;">
-                <path d="M150 110 Q190 70, 240 100 T340 120 T440 80 T540 120 T640 100" fill="none" stroke="var(--text-secondary)" stroke-width="1.5" stroke-dasharray="5 5" />
-                <path d="M100 250 Q200 200, 300 270 T500 240 T700 280" fill="none" stroke="var(--text-secondary)" stroke-width="1.5" stroke-dasharray="5 5" />
+                <path d="M150 110 Q190 70, 240 100 T340 120 T440 80 T540 120 T640 100" fill="none"
+                  stroke="var(--text-secondary)" stroke-width="1.5" stroke-dasharray="5 5" />
+                <path d="M100 250 Q200 200, 300 270 T500 240 T700 280" fill="none" stroke="var(--text-secondary)"
+                  stroke-width="1.5" stroke-dasharray="5 5" />
                 <!-- US Map outlines representation -->
-                <path d="M120 180 L200 120 L280 130 L350 100 L440 130 L550 110 L680 140 L700 200 L650 280 L580 290 L520 250 L420 320 L280 300 L180 320 L120 280 Z" fill="rgba(255,255,255,0.02)" stroke="var(--border-color)" stroke-width="2" />
+                <path
+                  d="M120 180 L200 120 L280 130 L350 100 L440 130 L550 110 L680 140 L700 200 L650 280 L580 290 L520 250 L420 320 L280 300 L180 320 L120 280 Z"
+                  fill="rgba(255,255,255,0.02)" stroke="var(--border-color)" stroke-width="2" />
               </svg>
-              
+
               <!-- Hotspot marker tags -->
               <div style="position: absolute; top: 40%; left: 35%;" class="map-marker-pin pulsing-dot"></div>
               <div style="position: absolute; top: 32%; left: 68%;" class="map-marker-pin pulsing-dot"></div>
               <div style="position: absolute; top: 36%; left: 52%;" class="map-marker-pin pulsing-dot"></div>
             </div>
-            
+
             <div class="map-card-floating card glass-panel p-3">
               <div class="d-flex align-items-center gap-2">
                 <i class="bi bi-geo-alt-fill" style="color: var(--accent-color);"></i>
-                <span style="font-size: 0.85rem; font-weight: 600;">Selected Coordinates: <span id="current-coordinate-span" style="color: var(--accent-color);">34.0928, -118.3287</span></span>
+                <span style="font-size: 0.85rem; font-weight: 500;">Selected Coordinates: <span
+                    id="current-coordinate-span" style="color: var(--accent-color);">34.0928, -118.3287</span></span>
               </div>
             </div>
           </div>
@@ -193,13 +219,200 @@
   <!-- Client Logos Brand Grid -->
   <section style="padding: 4rem 0; background-color: var(--bg-color);">
     <div class="container text-center">
-      <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px;">TRUSTED BY WORLD-CLASS BRANDS</span>
+      <span
+        style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px;">TRUSTED
+        BY WORLD-CLASS BRANDS</span>
       <div class="row g-4 align-items-center justify-content-center mt-3" style="opacity: 0.65;">
-        <div class="col-4 col-md-2"><h4 style="font-family: var(--font-heading);">SPHERE</h4></div>
-        <div class="col-4 col-md-2"><h4 style="font-family: var(--font-heading);">NEXUS</h4></div>
-        <div class="col-4 col-md-2"><h4 style="font-family: var(--font-heading);">VERTEX</h4></div>
-        <div class="col-4 col-md-2"><h4 style="font-family: var(--font-heading);">APEX</h4></div>
-        <div class="col-4 col-md-2"><h4 style="font-family: var(--font-heading);">ACME</h4></div>
+        <div class="col-4 col-md-2">
+          <h4 style="font-family: var(--font-heading);">SPHERE</h4>
+        </div>
+        <div class="col-4 col-md-2">
+          <h4 style="font-family: var(--font-heading);">NEXUS</h4>
+        </div>
+        <div class="col-4 col-md-2">
+          <h4 style="font-family: var(--font-heading);">VERTEX</h4>
+        </div>
+        <div class="col-4 col-md-2">
+          <h4 style="font-family: var(--font-heading);">APEX</h4>
+        </div>
+        <div class="col-4 col-md-2">
+          <h4 style="font-family: var(--font-heading);">ACME</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section
+    style="background-color: var(--surface-color); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-title-wrapper text-center">
+        <span class="section-subtitle">Testimonials</span>
+        <h2 class="section-title">Success Stories from Our Partners</h2>
+        <p class="section-desc">See how leading brands and marketing agencies leverage our OOH networks to scale
+          campaign reach.</p>
+      </div>
+      <div class="row g-4">
+        <!-- Testimonial 1 -->
+        <div class="col-md-4">
+          <div class="card glass-panel p-4 h-100 glow-card" style="border: 1px solid var(--border-color);">
+            <div class="d-flex gap-1 mb-3 text-warning" style="font-size: 0.9rem;">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p
+              style="font-style: italic; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.7; font-weight: 400;">
+              "Advantage's digital highway bulletins gave our summer beverage launch massive reach. The real-time
+              programmatic triggers allowed us to swap creatives based on hourly weather changes."
+            </p>
+            <div class="d-flex align-items-center gap-3 mt-auto">
+              <div
+                style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-color) 0%, var(--highlight-color) 100%); display: flex; align-items: center; justify-content: center; font-weight: 500; color: #020617; font-family: var(--font-heading); font-size: 0.9rem;">
+                MS
+              </div>
+              <div>
+                <h5 style="margin: 0; font-size: 0.95rem; font-family: var(--font-heading); font-weight: 500;">Marcus
+                  Sterling</h5>
+                <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 400;">VP of Marketing, SipVibe
+                  Co.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="col-md-4">
+          <div class="card glass-panel p-4 h-100 glow-card" style="border: 1px solid var(--border-color);">
+            <div class="d-flex gap-1 mb-3 text-warning" style="font-size: 0.9rem;">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p
+              style="font-style: italic; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.7; font-weight: 400;">
+              "As a media buyer, I require transparency and exact impression counts. AdVantage's OOH metrics dashboard
+              provided GPS-audited plays and dynamic traffic logs. Highly recommend for enterprise scale."
+            </p>
+            <div class="d-flex align-items-center gap-3 mt-auto">
+              <div
+                style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-color) 0%, var(--highlight-color) 100%); display: flex; align-items: center; justify-content: center; font-weight: 500; color: #020617; font-family: var(--font-heading); font-size: 0.9rem;">
+                SK
+              </div>
+              <div>
+                <h5 style="margin: 0; font-size: 0.95rem; font-family: var(--font-heading); font-weight: 500;">Sarah
+                  Jenkins</h5>
+                <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 400;">Senior Media Planner,
+                  Vanguard Ads</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="col-md-4">
+          <div class="card glass-panel p-4 h-100 glow-card" style="border: 1px solid var(--border-color);">
+            <div class="d-flex gap-1 mb-3 text-warning" style="font-size: 0.9rem;">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p
+              style="font-style: italic; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.7; font-weight: 400;">
+              "The bus shelter poster placements along high-street retail areas drove direct in-store foot traffic lift.
+              Working with their creative strategists made Vinyl installation and compliance verification simple."
+            </p>
+            <div class="d-flex align-items-center gap-3 mt-auto">
+              <div
+                style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-color) 0%, var(--highlight-color) 100%); display: flex; align-items: center; justify-content: center; font-weight: 500; color: #020617; font-family: var(--font-heading); font-size: 0.9rem;">
+                DC
+              </div>
+              <div>
+                <h5 style="margin: 0; font-size: 0.95rem; font-family: var(--font-heading); font-weight: 500;">David
+                  Chen</h5>
+                <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 400;">Founder, Chen &
+                  Partners</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section style="background-color: var(--bg-color);">
+    <div class="container" style="max-width: 800px;">
+      <div class="section-title-wrapper text-center">
+        <span class="section-subtitle">FAQ</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Have queries about OOH placements, production schedules, or pricing? Find rapid answers
+          below.</p>
+      </div>
+
+      <div class="faq-accordion d-flex flex-column gap-3">
+        <!-- FAQ 1 -->
+        <details class="faq-item card glass-panel p-3" style="border: 1px solid var(--border-color);">
+          <summary class="faq-question d-flex justify-content-between align-items-center"
+            style="font-family: var(--font-heading); font-weight: 500; font-size: 1rem; cursor: pointer; list-style: none;">
+            <span>What is the difference between digital and traditional OOH?</span>
+            <i class="bi bi-plus faq-toggle-icon"></i>
+          </summary>
+          <div class="faq-answer mt-3"
+            style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; font-weight: 400;">
+            Digital Out-of-Home (DOOH) utilizes high-impact LED/LCD screens allowing dynamic programmatic content
+            changes, weather/dayparting triggers, and multiple creative schedules. Traditional OOH utilizes physical
+            printed vinyl layouts wrapped onto roadside frames, securing exclusive round-the-clock display ownership.
+          </div>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="faq-item card glass-panel p-3" style="border: 1px solid var(--border-color);">
+          <summary class="faq-question d-flex justify-content-between align-items-center"
+            style="font-family: var(--font-heading); font-weight: 500; font-size: 1rem; cursor: pointer; list-style: none;">
+            <span>How do you calculate daily audience impressions?</span>
+            <i class="bi bi-plus faq-toggle-icon"></i>
+          </summary>
+          <div class="faq-answer mt-3"
+            style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; font-weight: 400;">
+            Audience metrics are derived from mobile location logs, traffic census audits, and local commuter route
+            databases. This ensures reliable data tracking to calculate your estimated views, CPM rates, and unique
+            demographic reach indices.
+          </div>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="faq-item card glass-panel p-3" style="border: 1px solid var(--border-color);">
+          <summary class="faq-question d-flex justify-content-between align-items-center"
+            style="font-family: var(--font-heading); font-weight: 500; font-size: 1rem; cursor: pointer; list-style: none;">
+            <span>Can I customize the active run times of my digital ad spots?</span>
+            <i class="bi bi-plus faq-toggle-icon"></i>
+          </summary>
+          <div class="faq-answer mt-3"
+            style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; font-weight: 400;">
+            Yes, through our advertiser dashboard, you can schedule slots matching specific rush hours, dayparts, or
+            meteorological triggers (like temperature or rainfall alerts).
+          </div>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details class="faq-item card glass-panel p-3" style="border: 1px solid var(--border-color);">
+          <summary class="faq-question d-flex justify-content-between align-items-center"
+            style="font-family: var(--font-heading); font-weight: 500; font-size: 1rem; cursor: pointer; list-style: none;">
+            <span>What are the lead times for vinyl printing and installation?</span>
+            <i class="bi bi-plus faq-toggle-icon"></i>
+          </summary>
+          <div class="faq-answer mt-3"
+            style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; font-weight: 400;">
+            Traditional physical campaigns require printed vinyl shipments. Average production and installation lead
+            times are 10–14 business days from approved creative submission. Digital board campaigns can be uploaded and
+            activated within 2 hours.
+          </div>
+        </details>
       </div>
     </div>
   </section>
@@ -209,7 +422,8 @@
     <div class="container text-center">
       <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready to Boost Campaign ROAS?</h2>
       <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 2.5rem auto;">
-        Access demographic metrics and choose location placements suited perfectly for your retail campaigns. Talk to our planning agency today.
+        Access demographic metrics and choose location placements suited perfectly for your retail campaigns. Talk to
+        our planning agency today.
       </p>
       <div class="d-flex justify-content-center gap-3 flex-wrap">
         <a href="contact.html" class="btn btn-primary">RFP Proposal Inquiry</a>
@@ -227,7 +441,8 @@
             <i class="bi bi-broadcast"></i> AD<span>VANTAGE</span>
           </a>
           <p style="font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.6;">
-            AdVantage is a leading developer and operator of high-impact digital billboard and out-of-home (OOH) media display networks globally.
+            AdVantage is a leading developer and operator of high-impact digital billboard and out-of-home (OOH) media
+            display networks globally.
           </p>
           <div class="d-flex gap-3">
             <a href="#" style="color: #94A3B8; font-size: 1.25rem;"><i class="bi bi-twitter-x"></i></a>
@@ -257,8 +472,11 @@
           <h5 class="footer-column-title">Newsletter</h5>
           <p style="font-size: 0.85rem; margin-bottom: 1rem;">Receive media rates and regional inventory updates.</p>
           <form style="display: flex; gap: 0.5rem;">
-            <input type="email" placeholder="Enter email" style="background: #1E293B; border: 1px solid #334155; color: #FFFFFF; font-size: 0.85rem; padding: 0.5rem 0.75rem; border-radius: 4px; outline: none; flex-grow: 1;">
-            <button type="submit" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem; border-radius: 4px;"><i class="bi bi-arrow-right"></i></button>
+            <input type="email" placeholder="Enter email"
+              style="background: #1E293B; border: 1px solid #334155; color: #FFFFFF; font-size: 0.85rem; padding: 0.5rem 0.75rem; border-radius: 4px; outline: none; flex-grow: 1;">
+            <button type="submit" class="btn btn-primary"
+              style="padding: 0.5rem 1rem; font-size: 0.85rem; border-radius: 4px;"><i
+                class="bi bi-arrow-right"></i></button>
           </form>
         </div>
       </div>
@@ -288,6 +506,5 @@
     });
   </script>
 </body>
+
 </html>
-
-

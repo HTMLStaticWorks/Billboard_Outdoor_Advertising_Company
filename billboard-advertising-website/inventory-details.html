@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AdVantage OOH | Los Angeles Center Digital LED Details</title>
@@ -73,7 +74,7 @@
   <section style="padding: var(--spacing-md) 0 var(--spacing-lg) 0;">
     <div class="container">
       <div style="margin-bottom: 2rem;">
-        <a href="inventory.html" style="font-size: 0.9rem; font-weight: 600;"><i class="bi bi-arrow-left"></i> Back to Catalog Directory</a>
+        <a href="inventory.html" style="font-size: 0.9rem; font-weight: 500;"><i class="bi bi-arrow-left"></i> Back to Catalog Directory</a>
       </div>
       
       <div class="row gy-5">
@@ -81,12 +82,12 @@
         <div class="col-lg-7">
           <div class="card p-2 glass-panel glow-card mb-4">
             <div class="card-img-wrapper" style="aspect-ratio: 16/9; border-radius: 8px;">
-              <img src="assets/images/hero/hero-main.jpg" alt="Sunset Blvd LED Screen View" class="card-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22450%22 style=%22background:%230b1120;%22><text x=%2250%25%22 y=%2250%25%22 fill=%22%2338bdf8%22 font-size=%2224%22 text-anchor=%22middle%22>Sunset Blvd LED Screen</text></svg>'">
+              <img id="item-image" src="assets/images/hero/hero-main.jpg" alt="Sunset Blvd LED Screen View" class="card-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22450%22 style=%22background:%230b1120;%22><text x=%2250%25%22 y=%2250%25%22 fill=%22%2338bdf8%22 font-size=%2224%22 text-anchor=%22middle%22>Sunset Blvd LED Screen</text></svg>'">
             </div>
           </div>
           
-          <h2 style="font-family: var(--font-heading); margin-bottom: 1rem;">Sunset Boulevard Center Digital LED</h2>
-          <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+          <h2 id="item-title" style="font-family: var(--font-heading); margin-bottom: 1rem;">Sunset Boulevard Center Digital LED</h2>
+          <p id="item-desc" style="color: var(--text-secondary); margin-bottom: 2rem;">
             This high-impact digital billboard sits at the heart of Sunset Boulevard, targeting heavy consumer traffic commuting through high-end dining, retail shopping centers, and entertainment venues.
           </p>
 
@@ -96,39 +97,39 @@
             <div class="row g-3">
               <div class="col-6 col-sm-4">
                 <span style="font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase;">Media Type</span>
-                <p style="font-weight: 600; margin: 0;">Digital LED Screen</p>
+                <p id="spec-media-type" style="font-weight: 500; margin: 0;">Digital LED Screen</p>
               </div>
               <div class="col-6 col-sm-4">
                 <span style="font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase;">Dimensions</span>
-                <p style="font-weight: 600; margin: 0;">14' H x 48' W</p>
+                <p id="spec-dimensions" style="font-weight: 500; margin: 0;">14' H x 48' W</p>
               </div>
               <div class="col-6 col-sm-4">
                 <span style="font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase;">Resolution</span>
-                <p style="font-weight: 600; margin: 0;">1080p Full HD</p>
+                <p id="spec-resolution" style="font-weight: 500; margin: 0;">1080p Full HD</p>
               </div>
               <div class="col-6 col-sm-4">
                 <span style="font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase;">Illumination</span>
-                <p style="font-weight: 600; margin: 0;">24/7 Backlit LED</p>
+                <p id="spec-illumination" style="font-weight: 500; margin: 0;">24/7 Backlit LED</p>
               </div>
               <div class="col-6 col-sm-4">
                 <span style="font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase;">Ad Slot Cycle</span>
-                <p style="font-weight: 600; margin: 0;">15s Spot / 90s Loop</p>
+                <p id="spec-cycle" style="font-weight: 500; margin: 0;">15s Spot / 90s Loop</p>
               </div>
               <div class="col-6 col-sm-4">
                 <span style="font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase;">GPS Location</span>
-                <p style="font-weight: 600; margin: 0; color: var(--accent-color);">34.0928, -118.3287</p>
+                <p id="spec-coordinates" style="font-weight: 500; margin: 0; color: var(--accent-color);">34.0928, -118.3287</p>
               </div>
             </div>
           </div>
 
           <!-- Audience Demographics & Reach -->
           <h4 style="margin-bottom: 1rem; font-family: var(--font-heading);">Target Demographics & Reach</h4>
-          <div class="card p-3" style="background-color: var(--surface-color);">
+          <div class="card p-3" style="background-color: var(--surface-color);" id="demographics-card-container">
             <div class="row gy-3">
               <div class="col-sm-6">
                 <div class="d-flex justify-content-between mb-1" style="font-size: 0.85rem;">
                   <span style="color: var(--text-secondary);">Age 18 - 34</span>
-                  <span style="font-weight: 600;">45%</span>
+                  <span style="font-weight: 500;">45%</span>
                 </div>
                 <div style="background-color: var(--border-color); height: 8px; border-radius: 4px; overflow: hidden;">
                   <div style="background-color: var(--accent-color); width: 45%; height: 100%;"></div>
@@ -137,7 +138,7 @@
               <div class="col-sm-6">
                 <div class="d-flex justify-content-between mb-1" style="font-size: 0.85rem;">
                   <span style="color: var(--text-secondary);">Age 35 - 54</span>
-                  <span style="font-weight: 600;">38%</span>
+                  <span style="font-weight: 500;">38%</span>
                 </div>
                 <div style="background-color: var(--border-color); height: 8px; border-radius: 4px; overflow: hidden;">
                   <div style="background-color: var(--accent-color); width: 38%; height: 100%;"></div>
@@ -146,7 +147,7 @@
               <div class="col-sm-6">
                 <div class="d-flex justify-content-between mb-1" style="font-size: 0.85rem;">
                   <span style="color: var(--text-secondary);">Avg Household Income ($75K+)</span>
-                  <span style="font-weight: 600;">64%</span>
+                  <span style="font-weight: 500;">64%</span>
                 </div>
                 <div style="background-color: var(--border-color); height: 8px; border-radius: 4px; overflow: hidden;">
                   <div style="background-color: var(--highlight-color); width: 64%; height: 100%;"></div>
@@ -155,7 +156,7 @@
               <div class="col-sm-6">
                 <div class="d-flex justify-content-between mb-1" style="font-size: 0.85rem;">
                   <span style="color: var(--text-secondary);">Daily Car Traffic Volume</span>
-                  <span style="font-weight: 600;">85,000+</span>
+                  <span style="font-weight: 500;">85,000+</span>
                 </div>
                 <div style="background-color: var(--border-color); height: 8px; border-radius: 4px; overflow: hidden;">
                   <div style="background-color: var(--highlight-color); width: 85%; height: 100%;"></div>
@@ -182,18 +183,18 @@
               </div>
               
               <div class="form-group">
-                <label class="form-label" for="calc-duration">Flight Duration (Weeks): <span id="weeks-num-display" style="color: var(--accent-color); font-weight: 700;">4</span> Weeks</label>
+                <label class="form-label" for="calc-duration">Flight Duration (Weeks): <span id="weeks-num-display" style="color: var(--accent-color); font-weight: 500;">4</span> Weeks</label>
                 <input type="range" id="calc-duration" min="1" max="12" value="4" class="form-range w-100" style="accent-color: var(--accent-color);" oninput="document.getElementById('weeks-num-display').textContent=this.value">
               </div>
 
               <div class="card p-3 mb-4" style="background-color: rgba(255,255,255,0.03); border: 1px solid var(--border-color);">
                 <div class="d-flex justify-content-between mb-2">
                   <span style="font-size: 0.85rem; color: var(--text-secondary);">Estimated Flight Impact:</span>
-                  <span id="calc-reach" style="font-weight: 700; color: var(--highlight-color); font-size: 0.9rem;">2,380,000 Impressions</span>
+                  <span id="calc-reach" style="font-weight: 500; color: var(--highlight-color); font-size: 0.9rem;">2,380,000 Impressions</span>
                 </div>
                 <div class="d-flex justify-content-between">
-                  <span style="font-size: 0.95rem; font-weight: 600;">Total Flight Price:</span>
-                  <span id="calc-total-price" style="font-size: 1.35rem; font-family: var(--font-heading); font-weight: 700; color: var(--accent-color);">$18,000</span>
+                  <span style="font-size: 0.95rem; font-weight: 500;">Total Flight Price:</span>
+                  <span id="calc-total-price" style="font-size: 1.35rem; font-family: var(--font-heading); font-weight: 500; color: var(--accent-color);">$18,000</span>
                 </div>
               </div>
 
@@ -273,6 +274,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="assets/js/animations.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/inventory-details.js"></script>
 </body>
 </html>
 
