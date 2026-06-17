@@ -14,7 +14,7 @@ AdVantage OOH is a premium, enterprise-grade, data-driven static HTML/CSS/JS web
 ## Folder Architecture
 
 ```
-/billboard-advertising-website/
+/ (Repository Root)
 │
 ├── index.html
 ├── home-2.html
