@@ -75,7 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
           else if (isK) suffix = 'K';
           if (isPlus) suffix += '+';
           
-          stat.textContent = Math.floor(countObj.value) + suffix;
+          const formattedVal = (targetValue % 1 !== 0) ? countObj.value.toFixed(1) : Math.floor(countObj.value);
+          stat.textContent = formattedVal + suffix;
         }
       });
     });
@@ -104,7 +105,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Static counter fallback
     const statNumbers = document.querySelectorAll('.stat-number');
     statNumbers.forEach(stat => {
-      stat.textContent = stat.getAttribute('data-value') + (stat.textContent.includes('%') ? '%' : '') + (stat.textContent.includes('+') ? '+' : '');
+      let suffix = '';
+      if (stat.textContent.includes('%')) suffix = '%';
+      else if (stat.textContent.includes('M') || stat.textContent.includes('m')) suffix = 'M';
+      else if (stat.textContent.includes('K') || stat.textContent.includes('k')) suffix = 'K';
+      if (stat.textContent.includes('+')) suffix += '+';
+      
+      stat.textContent = stat.getAttribute('data-value') + suffix;
     });
   }
 });

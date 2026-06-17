@@ -614,31 +614,31 @@
       </div>
       
       <nav class="sidebar-menu">
-        <a href="#overview-section" class="menu-item active">
+        <a href="dashboard.html" class="menu-item active">
           <i class="bi bi-speedometer2"></i>
           <span>Overview</span>
         </a>
-        <a href="#locator-section" class="menu-item">
+        <a href="dashboard-locator.html" class="menu-item">
           <i class="bi bi-map"></i>
           <span>Location Hotspots</span>
         </a>
-        <a href="#planner-section" class="menu-item">
+        <a href="dashboard-planner.html" class="menu-item">
           <i class="bi bi-calendar3"></i>
           <span>Availability Planner</span>
         </a>
-        <a href="#upload-section" class="menu-item">
+        <a href="dashboard-upload.html" class="menu-item">
           <i class="bi bi-cloud-arrow-up"></i>
           <span>Ad Creative Portal</span>
         </a>
-        <a href="#" class="menu-item dashboard-placeholder-link">
+        <a href="dashboard-analytics.html" class="menu-item">
           <i class="bi bi-bar-chart-line"></i>
           <span>Campaign Analytics</span>
         </a>
-        <a href="#" class="menu-item dashboard-placeholder-link">
+        <a href="dashboard-billing.html" class="menu-item">
           <i class="bi bi-credit-card"></i>
           <span>Billing & Invoices</span>
         </a>
-        <a href="#" class="menu-item dashboard-placeholder-link">
+        <a href="dashboard-support.html" class="menu-item">
           <i class="bi bi-question-circle"></i>
           <span>Support & RFPs</span>
         </a>
@@ -695,168 +695,210 @@
       </header>
       
       <!-- Dashboard Body Wrapper -->
+      <!-- Dashboard Body Wrapper -->
       <main class="dashboard-body">
         <!-- Page Header Title -->
-        <section id="overview-section" style="background: linear-gradient(180deg, var(--surface-color) 0%, transparent 100%); padding: 2.5rem 0 2rem 0;">
-    <div class="container text-center">
-      <span class="section-subtitle">Advertiser Dashboard</span>
-      <h1 class="section-title">Programmatic Campaign Hub</h1>
-      <p class="section-desc" style="max-width: 550px; margin: 0 auto;">Plan outdoor placements, check live screen schedules, and submit digital ad creatives for review.</p>
-    </div>
-  </section>
+        <section id="overview-section" style="background: linear-gradient(180deg, var(--surface-color) 0%, transparent 100%); padding: 2.5rem 0 2.5rem 0;">
+          <div class="container">
+            <span class="section-subtitle">Advertiser Dashboard</span>
+            <h1 class="section-title text-start mb-2">Welcome Back, John!</h1>
+            <p class="section-desc text-start m-0" style="max-width: 600px;">Here is the real-time status of your programmatic OOH placements, creative audits, and campaign analytics.</p>
+          </div>
+        </section>
 
-  <!-- Dashboard Layout -->
-  <section class="dashboard-layout">
-    <div class="container">
-      <div class="row g-4">
-        
-        <!-- Left Side: Locator and Calendar -->
-        <div class="col-lg-7 d-flex flex-column gap-4">
-          
-          <!-- Card 1: Interactive Hotspot Locator -->
-          <div class="card glass-panel p-4" id="locator-section" style="border: 1px solid var(--border-color);">
-            <div class="d-flex align-items-center justify-content-between mb-4">
-              <h4 style="margin: 0; font-family: var(--font-heading);"><i class="bi bi-map"></i> Billboard Location Hotspots</h4>
-              <span style="font-size: 0.75rem; background: rgba(56,189,248,0.1); color: var(--accent-color); padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 500;">LIVE INVENTORY</span>
-            </div>
-            
+        <!-- KPI Grid -->
+        <section style="padding: 0 0 2rem 0;">
+          <div class="container">
             <div class="row g-3">
-              <div class="col-md-5 d-flex flex-column gap-2" id="inventory-list-container">
-                <!-- Javascript populates items here -->
+              <div class="col-sm-6 col-xl-3">
+                <div class="card glass-panel p-4" style="border: 1px solid var(--border-color); height: 100%;">
+                  <span class="text-uppercase" style="font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); letter-spacing: 0.5px;">Active Placements</span>
+                  <div class="d-flex align-items-baseline gap-2 mt-2">
+                    <h2 class="m-0" style="font-size: 2rem; color: var(--accent-color); font-weight: 700;">2</h2>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">Screens Live</span>
+                  </div>
+                  <div class="mt-3" style="font-size: 0.75rem; color: #22C55E;">
+                    <i class="bi bi-arrow-up-right-circle-fill"></i> 100% Delivery Rate
+                  </div>
+                </div>
               </div>
-              <div class="col-md-7">
-                <div class="map-container">
-                  <div class="grid-dot-pattern"></div>
-                  <!-- Inline SVG layout representing city maps -->
-                  <svg width="100%" height="100%" viewBox="0 0 400 380" style="opacity: 0.35; position: absolute; top:0; left:0;">
-                    <path d="M40 80 L360 80 M40 160 L360 160 M40 240 L360 240 M40 320 L360 320" stroke="var(--border-color)" stroke-width="1.5" stroke-dasharray="6 6" />
-                    <path d="M80 40 L80 340 M160 40 L160 340 M240 40 L240 340 M320 40 L320 340" stroke="var(--border-color)" stroke-width="1.5" stroke-dasharray="6 6" />
-                    <path d="M60 40 Q150 120, 280 160 T350 320" fill="none" stroke="var(--text-secondary)" stroke-width="2.5" />
-                    <path d="M30 300 Q180 200, 320 80" fill="none" stroke="var(--accent-color)" stroke-width="1.5" stroke-dasharray="3 3" />
-                  </svg>
-                  
-                  <!-- Hotspot Marker Pins -->
-                  <div class="spot-pin active" style="top: 25%; left: 35%;" data-index="0" title="Sunset Blvd Center LED"></div>
-                  <div class="spot-pin" style="top: 42%; left: 70%;" data-index="1" title="Times Square Digital LED"></div>
-                  <div class="spot-pin" style="top: 60%; left: 55%;" data-index="2" title="Broadway Subway Shelter"></div>
-                  <div class="spot-pin" style="top: 75%; left: 28%;" data-index="3" title="I-10 Expressway Interchange"></div>
+              <div class="col-sm-6 col-xl-3">
+                <div class="card glass-panel p-4" style="border: 1px solid var(--border-color); height: 100%;">
+                  <span class="text-uppercase" style="font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); letter-spacing: 0.5px;">Total Reach</span>
+                  <div class="d-flex align-items-baseline gap-2 mt-2">
+                    <h2 class="m-0" style="font-size: 2rem; color: var(--highlight-color); font-weight: 700;">195K</h2>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">Impressions/day</span>
+                  </div>
+                  <div class="mt-3" style="font-size: 0.75rem; color: var(--text-secondary);">
+                    Across 2 key metro areas
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-xl-3">
+                <div class="card glass-panel p-4" style="border: 1px solid var(--border-color); height: 100%;">
+                  <span class="text-uppercase" style="font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); letter-spacing: 0.5px;">Pending Audits</span>
+                  <div class="d-flex align-items-baseline gap-2 mt-2">
+                    <h2 class="m-0" style="font-size: 2rem; color: #F59E0B; font-weight: 700;">1</h2>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">Campaign</span>
+                  </div>
+                  <div class="mt-3" style="font-size: 0.75rem; color: var(--text-secondary);">
+                    Creative in compliance review
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-xl-3">
+                <div class="card glass-panel p-4" style="border: 1px solid var(--border-color); height: 100%;">
+                  <span class="text-uppercase" style="font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); letter-spacing: 0.5px;">Ad Spend (YTD)</span>
+                  <div class="d-flex align-items-baseline gap-2 mt-2">
+                    <h2 class="m-0" style="font-size: 2rem; color: #FFFFFF; font-weight: 700;">$14,750</h2>
+                  </div>
+                  <div class="mt-3" style="font-size: 0.75rem; color: var(--text-secondary);">
+                    Next billing cycle: July 01
+                  </div>
                 </div>
               </div>
             </div>
-            
-            <!-- Dynamic Info display details -->
-            <div class="mt-4 p-3" style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px;" id="active-spot-details">
-              <!-- Selected hotspot information is loaded here -->
-            </div>
           </div>
-          
-          <!-- Card 2: Interactive Availability Calendar -->
-          <div class="card glass-panel p-4" id="planner-section" style="border: 1px solid var(--border-color);">
-            <div class="d-flex align-items-center justify-content-between mb-2">
-              <h4 style="margin: 0; font-family: var(--font-heading);"><i class="bi bi-calendar3"></i> Availability Planner</h4>
-              <span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);" id="calendar-month-indicator">June 2026</span>
-            </div>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">Select available slots (weekly) to schedule your programmatic flight campaign. Locked dates are already reserved.</p>
-            
-            <div class="calendar-grid" id="calendar-slots-grid">
-              <!-- Calendar Weeks are rendered here via JavaScript -->
-            </div>
-            
-            <div class="d-flex justify-content-between align-items-center mt-4 pt-3" style="border-top: 1px solid var(--border-color);">
-              <div>
-                <span style="font-size: 0.8rem; color: var(--text-secondary);">Selected Flight Duration</span>
-                <h5 style="margin: 0; color: var(--accent-color);" id="calc-selected-weeks">0 Weeks</h5>
-              </div>
-              <div class="text-end">
-                <span style="font-size: 0.8rem; color: var(--text-secondary);">Est. Space Rental Fee</span>
-                <h4 style="margin: 0; font-family: var(--font-heading); color: var(--highlight-color);" id="calc-total-rental">$0</h4>
-              </div>
-            </div>
-          </div>
+        </section>
 
-        </div>
-        
-        <!-- Right Side: Ad Creative Upload Portal -->
-        <div class="col-lg-5">
-          <div class="card glass-panel p-4" id="upload-section" style="border: 1px solid var(--border-color); position: sticky; top: 100px;">
-            <h4 style="margin-bottom: 0.5rem; font-family: var(--font-heading);"><i class="bi bi-cloud-arrow-up"></i> Upload Ad Creative</h4>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Upload visual content matching billboard dimensions. Fits JPG, PNG, and MP4 up to 10MB.</p>
-            
-            <form id="dashboard-campaign-form">
-              <div class="form-group">
-                <label class="form-label" for="creative-name">Campaign Title</label>
-                <input type="text" id="creative-name" class="form-control" placeholder="e.g., Summer Brand Launch 2026" required>
-              </div>
-              
-              <div class="form-group">
-                <label class="form-label">Creative Content File</label>
-                <input type="file" id="creative-file-input" style="display: none;" accept="image/*, video/mp4">
-                
-                <div class="upload-dropzone" id="file-dropzone">
-                  <div id="dropzone-default-view">
-                    <i class="bi bi-image upload-icon"></i>
-                    <p style="font-size: 0.9rem; font-weight: 500; margin-bottom: 0.25rem;">Drag & drop ad asset here</p>
-                    <p style="font-size: 0.75rem; color: var(--text-muted);">or click to browse local files</p>
+        <!-- Main Dashboard Details Layout -->
+        <section style="padding: 0 0 2rem 0;">
+          <div class="container">
+            <div class="row g-4">
+              <!-- Left: Active Campaigns & Placement details -->
+              <div class="col-lg-8">
+                <div class="card glass-panel p-4" style="border: 1px solid var(--border-color); height: 100%;">
+                  <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h4 class="m-0" style="font-family: var(--font-heading);"><i class="bi bi-display"></i> Active Placements</h4>
+                    <a href="dashboard-locator.html" class="btn btn-outline" style="font-size: 0.8rem; padding: 0.4rem 1rem;"><i class="bi bi-plus-circle"></i> Book New Screen</a>
                   </div>
                   
-                  <!-- Preview container for uploaded images -->
-                  <div class="preview-container" id="preview-box">
-                    <img src="" class="preview-image" id="preview-img" alt="Creative Mockup Preview">
-                    <div class="preview-overlay-info">
-                      <span id="preview-file-name" style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap; max-width: 180px;">filename.jpg</span>
-                      <span id="preview-file-size">0.0 MB</span>
-                      <button type="button" id="remove-file-btn" class="btn btn-secondary" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;"><i class="bi bi-trash"></i></button>
+                  <div class="table-responsive">
+                    <table class="table" style="color: var(--text-primary); border-color: var(--border-color); vertical-align: middle;">
+                      <thead>
+                        <tr style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-secondary);">
+                          <th style="border-bottom-width: 1px;">OOH Screen Location</th>
+                          <th style="border-bottom-width: 1px;">Ad Campaign</th>
+                          <th style="border-bottom-width: 1px;">Flight Duration</th>
+                          <th style="border-bottom-width: 1px;">Engagement Status</th>
+                          <th style="border-bottom-width: 1px; text-align: right;">Progress</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <span style="font-weight: 600; font-size: 0.9rem;">Sunset Blvd Center LED</span>
+                              <span style="font-size: 0.75rem; color: var(--text-muted);">Los Angeles, CA</span>
+                            </div>
+                          </td>
+                          <td><span style="font-size: 0.85rem;">Summer Brand Launch</span></td>
+                          <td><span style="font-size: 0.85rem;">June 01 - June 14</span></td>
+                          <td><span class="badge" style="background: rgba(34, 197, 94, 0.1); color: #22C55E; border: 1px solid rgba(34, 197, 94, 0.2); font-weight: 500; font-size: 0.75rem; padding: 0.25rem 0.5rem;">Delivering</span></td>
+                          <td style="text-align: right;">
+                            <div class="d-flex align-items-center gap-2 justify-content-end">
+                              <span style="font-size: 0.8rem; font-weight: 500;">100%</span>
+                              <div class="progress" style="width: 60px; height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden; margin: 0;">
+                                <div class="progress-bar" style="width: 100%; background: #22C55E; height: 100%;"></div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <span style="font-weight: 600; font-size: 0.9rem;">Times Square Center LED</span>
+                              <span style="font-size: 0.75rem; color: var(--text-muted);">New York, NY</span>
+                            </div>
+                          </td>
+                          <td><span style="font-size: 0.85rem;">Interactive QR-Code Promo</span></td>
+                          <td><span style="font-size: 0.85rem;">June 08 - June 28</span></td>
+                          <td><span class="badge" style="background: rgba(34, 197, 94, 0.1); color: #22C55E; border: 1px solid rgba(34, 197, 94, 0.2); font-weight: 500; font-size: 0.75rem; padding: 0.25rem 0.5rem;">Delivering</span></td>
+                          <td style="text-align: right;">
+                            <div class="d-flex align-items-center gap-2 justify-content-end">
+                              <span style="font-size: 0.8rem; font-weight: 500;">47%</span>
+                              <div class="progress" style="width: 60px; height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden; margin: 0;">
+                                <div class="progress-bar" style="width: 47%; background: var(--accent-color); height: 100%;"></div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <span style="font-weight: 600; font-size: 0.9rem;">I-10 Expressway Interchange</span>
+                              <span style="font-size: 0.75rem; color: var(--text-muted);">Los Angeles, CA</span>
+                            </div>
+                          </td>
+                          <td><span style="font-size: 0.85rem;">Auto Brand Awareness</span></td>
+                          <td><span style="font-size: 0.85rem;">June 15 - June 21</span></td>
+                          <td><span class="badge" style="background: rgba(245, 158, 11, 0.1); color: #F59E0B; border: 1px solid rgba(245, 158, 11, 0.2); font-weight: 500; font-size: 0.75rem; padding: 0.25rem 0.5rem;">Pending Audit</span></td>
+                          <td style="text-align: right;">
+                            <div class="d-flex align-items-center gap-2 justify-content-end">
+                              <span style="font-size: 0.8rem; font-weight: 500;">0%</span>
+                              <div class="progress" style="width: 60px; height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden; margin: 0;">
+                                <div class="progress-bar" style="width: 0%; background: #F59E0B; height: 100%;"></div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Quick Actions & Alerts -->
+              <div class="col-lg-4 d-flex flex-column gap-4">
+                <div class="card glass-panel p-4" style="border: 1px solid var(--border-color);">
+                  <h4 class="mb-3" style="font-family: var(--font-heading);"><i class="bi bi-lightning-charge"></i> Quick Tasks</h4>
+                  <div class="d-flex flex-column gap-2">
+                    <a href="dashboard-locator.html" class="btn btn-secondary w-100 justify-content-start" style="text-align: left; gap: 0.75rem;">
+                      <i class="bi bi-map" style="color: var(--accent-color);"></i>
+                      <span>Browse Available Maps</span>
+                    </a>
+                    <a href="dashboard-planner.html" class="btn btn-secondary w-100 justify-content-start" style="text-align: left; gap: 0.75rem;">
+                      <i class="bi bi-calendar3" style="color: var(--highlight-color);"></i>
+                      <span>Schedule Flight Dates</span>
+                    </a>
+                    <a href="dashboard-upload.html" class="btn btn-secondary w-100 justify-content-start" style="text-align: left; gap: 0.75rem;">
+                      <i class="bi bi-cloud-arrow-up" style="color: #22C55E;"></i>
+                      <span>Submit Ad Creatives</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="card glass-panel p-4" style="border: 1px solid var(--border-color);">
+                  <h4 class="mb-3" style="font-family: var(--font-heading);"><i class="bi bi-activity"></i> Campaign Log</h4>
+                  <div class="d-flex flex-column gap-3" style="font-size: 0.85rem; max-height: 180px; overflow-y: auto;">
+                    <div class="d-flex gap-2">
+                      <i class="bi bi-info-circle-fill" style="color: var(--accent-color); flex-shrink: 0; margin-top: 2px;"></i>
+                      <div class="d-flex flex-column">
+                        <span style="color: var(--text-primary); font-weight: 500;">Creative uploaded for I-10 Panel</span>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);">Today, 10:24 AM</span>
+                      </div>
+                    </div>
+                    <div class="d-flex gap-2">
+                      <i class="bi bi-check-circle-fill" style="color: #22C55E; flex-shrink: 0; margin-top: 2px;"></i>
+                      <div class="d-flex flex-column">
+                        <span style="color: var(--text-primary); font-weight: 500;">Invoice #INV-2026-004 paid</span>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);">Yesterday, 4:15 PM</span>
+                      </div>
+                    </div>
+                    <div class="d-flex gap-2">
+                      <i class="bi bi-exclamation-circle-fill" style="color: #F59E0B; flex-shrink: 0; margin-top: 2px;"></i>
+                      <div class="d-flex flex-column">
+                        <span style="color: var(--text-primary); font-weight: 500;">Creative review request sent</span>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);">June 15, 2:40 PM</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-                
-                <!-- Progress bar -->
-                <div class="progress-bar-container" id="upload-progress-container">
-                  <div class="upload-progress-bar" id="upload-progress-bar"></div>
-                </div>
-                <div style="font-size: 0.75rem; color: var(--accent-color); margin-top: 0.25rem; display: none;" id="upload-success-status">
-                  <i class="bi bi-check-circle-fill"></i> Upload completed. Asset scaled to layout.
-                </div>
               </div>
-              
-              <div class="form-group">
-                <label class="form-label" for="creative-instructions">Compliance Notes</label>
-                <textarea id="creative-instructions" class="form-control" placeholder="Provide geo-targeting overrides or daylight schedule preferences for strategists review..." style="min-height: 80px;"></textarea>
-              </div>
-              
-              <div style="background: rgba(56, 189, 248, 0.05); border: 1px solid rgba(56, 189, 248, 0.15); border-radius: 8px; padding: 0.85rem; margin-bottom: 1.5rem; font-size: 0.8rem; color: var(--text-secondary);">
-                <i class="bi bi-info-circle" style="color: var(--accent-color); margin-right: 0.25rem;"></i>
-                Pre-selected placements and schedule dates are attached automatically upon submission.
-              </div>
-              
-              <button type="submit" id="submit-campaign-btn" class="btn btn-primary w-100 glow-btn" disabled>Submit Campaign for Review</button>
-            </form>
+            </div>
           </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-
+        </section>
       </main>
-    </div>
-  </div>
-
-  <!-- Glassmorphic Success Toast Panel -->
-  <div class="toast-panel" id="review-success-toast">
-    <div class="card glass-panel glow-card p-3" style="border: 2px solid var(--accent-color); background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(16px);">
-      <div class="d-flex align-items-start gap-3">
-        <div style="background: rgba(34, 197, 94, 0.15); color: #22C55E; padding: 0.5rem; border-radius: 8px; display: inline-flex;"><i class="bi bi-check2-circle" style="font-size: 1.25rem;"></i></div>
-        <div style="flex-grow:1;">
-          <h5 style="margin-top:0; margin-bottom:0.25rem; font-family: var(--font-heading); color: #FFFFFF;">Campaign Submitted Successfully</h5>
-          <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.75rem;">Your ad creative and pre-selected slot scheduling have been successfully logged. Strategists will audit content size & compliance formats in 2 hours.</p>
-          <div class="d-flex justify-content-end">
-            <button type="button" class="btn btn-primary btn-sm" id="close-toast-btn" style="padding: 0.25rem 0.75rem; font-size: 0.75rem;">Acknowledge</button>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -888,388 +930,11 @@
 
         sidebarClose.addEventListener('click', closeSidebar);
         sidebarOverlay.addEventListener('click', closeSidebar);
-
-        // Sidebar Menu Active State toggling on click
-        const menuItems = document.querySelectorAll('.sidebar-menu .menu-item');
-        menuItems.forEach(item => {
-          item.addEventListener('click', () => {
-            const href = item.getAttribute('href');
-            if (href && href.startsWith('#')) {
-              menuItems.forEach(mi => mi.classList.remove('active'));
-              item.classList.add('active');
-              
-              if (window.innerWidth < 992) {
-                closeSidebar();
-              }
-            }
-          });
-        });
       }
-      
-      // Billboard Placements Data
-      const billboardData = [
-        {
-          id: "sunset-led",
-          title: "Los Angeles Center Digital LED",
-          sub: "Sunset Blvd / Screen 4B",
-          type: "Digital LED Screen",
-          dimensions: "14' x 48'",
-          impressions: "85,000 / day",
-          price: 4500,
-          region: "Los Angeles, CA",
-          coords: "34.0928, -118.3287",
-          bookedWeeks: [1, 3] // Week index 1 and 3 are booked
-        },
-        {
-          id: "times-square-led",
-          title: "Times Square Center Digital LED",
-          sub: "Broadway & 42nd St",
-          type: "Curved Digital LED Screen",
-          dimensions: "30' x 60'",
-          impressions: "110,000 / day",
-          price: 5500,
-          region: "New York, NY",
-          coords: "40.7580, -73.9855",
-          bookedWeeks: [2, 4]
-        },
-        {
-          id: "broadway-shelter",
-          title: "Broadway Subway Shelter LCD",
-          sub: "Broadway Street Shelter",
-          type: "Digital Transit Poster",
-          dimensions: "6' x 4'",
-          impressions: "12,000 / day",
-          price: 850,
-          region: "New York, NY",
-          coords: "40.7570, -73.9860",
-          bookedWeeks: [1]
-        },
-        {
-          id: "i10-bulletin",
-          title: "I-10 Expressway Interchange Panel",
-          sub: "Highway Interstate 10",
-          type: "Traditional Bulletin Panel",
-          dimensions: "14' x 48'",
-          impressions: "52,000 / day",
-          price: 2200,
-          region: "Los Angeles, CA",
-          coords: "34.0522, -118.2437",
-          bookedWeeks: [3]
-        }
-      ];
-
-      let activeIndex = 0;
-      let selectedWeeks = new Set();
-
-      const listContainer = document.getElementById('inventory-list-container');
-      const detailsContainer = document.getElementById('active-spot-details');
-      const calendarGrid = document.getElementById('calendar-slots-grid');
-      const pins = document.querySelectorAll('.spot-pin');
-
-      // Render Billboard items list on sidebar
-      function renderBillboardList() {
-        listContainer.innerHTML = '';
-        billboardData.forEach((item, index) => {
-          const activeClass = index === activeIndex ? 'active' : '';
-          const div = document.createElement('div');
-          div.className = `inventory-list-item ${activeClass}`;
-          div.setAttribute('data-index', index);
-          div.innerHTML = `
-            <span style="font-size: 0.7rem; color: var(--accent-color); font-weight: 500; text-transform: uppercase;">${item.sub}</span>
-            <h6 style="margin: 0.1rem 0 0 0; font-size: 0.9rem; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">${item.title}</h6>
-            <div class="d-flex justify-content-between mt-2" style="font-size: 0.75rem; color: var(--text-muted);">
-              <span>${item.type}</span>
-              <span style="color: var(--highlight-color); font-weight: 500;">$${item.price.toLocaleString()}/wk</span>
-            </div>
-          `;
-          
-          div.addEventListener('click', () => {
-            selectBillboard(index);
-          });
-          listContainer.appendChild(div);
-        });
-      }
-
-      // Select billboard handler
-      function selectBillboard(index) {
-        activeIndex = index;
-        selectedWeeks.clear(); // Reset selections when billboard changes
-        
-        // Update active class on list items
-        document.querySelectorAll('.inventory-list-item').forEach((item, idx) => {
-          if (idx === index) item.classList.add('active');
-          else item.classList.remove('active');
-        });
-
-        // Update active class on map pins
-        pins.forEach((pin, idx) => {
-          if (idx === index) pin.classList.add('active');
-          else pin.classList.remove('active');
-        });
-
-        const activeData = billboardData[index];
-
-        // Update active specifications card
-        detailsContainer.innerHTML = `
-          <div class="row g-2 align-items-center">
-            <div class="col-sm-7">
-              <span style="font-size: 0.75rem; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">${activeData.region}</span>
-              <h5 style="margin: 0.15rem 0 0.5rem 0; font-family: var(--font-heading); color: #FFFFFF;">${activeData.title}</h5>
-              <div class="d-flex gap-3" style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
-                <span><i class="bi bi-aspect-ratio"></i> ${activeData.dimensions}</span>
-                <span><i class="bi bi-eye"></i> ${activeData.impressions}</span>
-              </div>
-            </div>
-            <div class="col-sm-5 text-sm-end" style="border-left: 1px solid var(--border-color); padding-left: 1rem;">
-              <span style="font-size: 0.75rem; color: var(--text-secondary);">WEEKLY SPONSORSHIP RATE</span>
-              <h4 style="margin:0; font-family: var(--font-heading); color: var(--highlight-color); font-weight: 700;">$${activeData.price.toLocaleString()}</h4>
-              <span style="font-size: 0.75rem; color: var(--text-muted);"><i class="bi bi-geo-alt"></i> Coords: ${activeData.coords}</span>
-            </div>
-          </div>
-        `;
-
-        renderCalendar(activeData);
-        updateTotals();
-      }
-
-      // Map pin click handler
-      pins.forEach(pin => {
-        pin.addEventListener('click', (e) => {
-          const index = parseInt(pin.getAttribute('data-index'));
-          selectBillboard(index);
-        });
-      });
-
-      // Render calendar for the active billboard
-      function renderCalendar(billboard) {
-        calendarGrid.innerHTML = '';
-        
-        const weeks = [
-          { index: 1, label: "Week 1", dates: "June 01 - June 07" },
-          { index: 2, label: "Week 2", dates: "June 08 - June 14" },
-          { index: 3, label: "Week 3", dates: "June 15 - June 21" },
-          { index: 4, label: "Week 4", dates: "June 22 - June 28" }
-        ];
-
-        weeks.forEach(week => {
-          const isBooked = billboard.bookedWeeks.includes(week.index);
-          const isSelected = selectedWeeks.has(week.index);
-          
-          let weekClass = 'available';
-          let statusText = 'Available';
-          
-          if (isBooked) {
-            weekClass = 'booked';
-            statusText = 'Booked';
-          } else if (isSelected) {
-            weekClass = 'available selected';
-            statusText = 'Selected';
-          }
-
-          const div = document.createElement('div');
-          div.className = `calendar-week ${weekClass}`;
-          div.innerHTML = `
-            <div style="font-weight: 700; font-family: var(--font-heading); font-size: 0.9rem;">${week.label}</div>
-            <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.1rem;">${week.dates}</div>
-            <div class="calendar-week-status">${statusText}</div>
-          `;
-
-          if (!isBooked) {
-            div.addEventListener('click', () => {
-              toggleWeekSelection(week.index);
-            });
-          }
-
-          calendarGrid.appendChild(div);
-        });
-      }
-
-      // Toggle week selection
-      function toggleWeekSelection(weekIndex) {
-        if (selectedWeeks.has(weekIndex)) {
-          selectedWeeks.delete(weekIndex);
-        } else {
-          selectedWeeks.add(weekIndex);
-        }
-        
-        // Re-render calendar to update classes
-        renderCalendar(billboardData[activeIndex]);
-        updateTotals();
-      }
-
-      // Update totals in UI
-      function updateTotals() {
-        const count = selectedWeeks.size;
-        const price = billboardData[activeIndex].price;
-        const total = count * price;
-        
-        document.getElementById('calc-selected-weeks').textContent = `${count} Week${count === 1 ? '' : 's'}`;
-        document.getElementById('calc-total-rental').textContent = `$${total.toLocaleString()}`;
-      }
-
-      // Initialize locator displays
-      renderBillboardList();
-      selectBillboard(0);
-
-      // File upload dropzone controls
-      const dropzone = document.getElementById('file-dropzone');
-      const fileInput = document.getElementById('creative-file-input');
-      const defaultView = document.getElementById('dropzone-default-view');
-      const previewBox = document.getElementById('preview-box');
-      const previewImg = document.getElementById('preview-img');
-      const fileNameSpan = document.getElementById('preview-file-name');
-      const fileSizeSpan = document.getElementById('preview-file-size');
-      const removeFileBtn = document.getElementById('remove-file-btn');
-      const progressContainer = document.getElementById('upload-progress-container');
-      const progressBar = document.getElementById('upload-progress-bar');
-      const successStatus = document.getElementById('upload-success-status');
-      const submitBtn = document.getElementById('submit-campaign-btn');
-
-      // Click to browse
-      dropzone.addEventListener('click', (e) => {
-        // Prevent click trigger if inside preview delete btn
-        if (!removeFileBtn.contains(e.target)) {
-          fileInput.click();
-        }
-      });
-
-      // Drag and drop actions
-      ['dragenter', 'dragover'].forEach(eventName => {
-        dropzone.addEventListener(eventName, (e) => {
-          e.preventDefault();
-          dropzone.classList.add('dragover');
-        }, false);
-      });
-
-      ['dragleave', 'drop'].forEach(eventName => {
-        dropzone.addEventListener(eventName, (e) => {
-          e.preventDefault();
-          dropzone.classList.remove('dragover');
-        }, false);
-      });
-
-      dropzone.addEventListener('drop', (e) => {
-        const dt = e.dataTransfer;
-        const files = dt.files;
-        if (files.length > 0) {
-          handleFile(files[0]);
-        }
-      });
-
-      fileInput.addEventListener('change', (e) => {
-        if (fileInput.files.length > 0) {
-          handleFile(fileInput.files[0]);
-        }
-      });
-
-      // Handle and validate selected asset file
-      function handleFile(file) {
-        // Check file size (max 10MB)
-        const maxSize = 10 * 1024 * 1024;
-        if (file.size > maxSize) {
-          alert(`File is too large! Maximum limit is 10MB. Selected file size: ${(file.size / (1024 * 1024)).toFixed(2)}MB`);
-          resetUpload();
-          return;
-        }
-
-        // Check file format
-        const validTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'video/mp4'];
-        if (!validTypes.includes(file.type)) {
-          alert('Invalid file format! Please upload an image asset (JPG, PNG, WEBP, GIF) or video asset (MP4).');
-          resetUpload();
-          return;
-        }
-
-        // Show upload metrics & launch progress bar
-        defaultView.style.display = 'none';
-        previewBox.style.display = 'none';
-        progressContainer.style.display = 'block';
-        successStatus.style.display = 'none';
-        submitBtn.disabled = true;
-
-        let width = 0;
-        progressBar.style.width = '0%';
-        
-        // Simulate file loading animation
-        const interval = setInterval(() => {
-          width += 10;
-          progressBar.style.width = `${width}%`;
-          if (width >= 100) {
-            clearInterval(interval);
-            showFilePreview(file);
-          }
-        }, 120);
-      }
-
-      // Render file preview upon loading completion
-      function showFilePreview(file) {
-        progressContainer.style.display = 'none';
-        previewBox.style.display = 'block';
-        successStatus.style.display = 'block';
-        submitBtn.disabled = false;
-
-        fileNameSpan.textContent = file.name;
-        fileSizeSpan.textContent = `${(file.size / (1024 * 1024)).toFixed(2)} MB`;
-
-        // Render preview image
-        if (file.type.startsWith('image/')) {
-          const reader = new FileReader();
-          reader.onload = (e) => {
-            previewImg.src = e.target.result;
-          };
-          reader.readAsDataURL(file);
-        } else {
-          // Fallback image representational SVG for video files
-          previewImg.src = "data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22 style=%22background:%230b1120;%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23020617%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%2338bdf8%22 font-size=%2220%22 font-family=%22sans-serif%22 text-anchor=%22middle%22>MP4 Video Placement</text><polygon points=%22190,105 220,120 190,135%22 fill=%22%2338bdf8%22/></svg>";
-        }
-      }
-
-      // Reset upload area
-      function resetUpload() {
-        fileInput.value = '';
-        defaultView.style.display = 'block';
-        previewBox.style.display = 'none';
-        previewImg.src = '';
-        progressContainer.style.display = 'none';
-        progressBar.style.width = '0%';
-        successStatus.style.display = 'none';
-        submitBtn.disabled = true;
-      }
-
-      removeFileBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        resetUpload();
-      });
-
-      // Submit Campaign and show Success feedback toast
-      const form = document.getElementById('dashboard-campaign-form');
-      const toast = document.getElementById('review-success-toast');
-      const closeToastBtn = document.getElementById('close-toast-btn');
-
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Show success alert toast
-        toast.classList.add('show');
-        
-        // Clear all inputs
-        form.reset();
-        resetUpload();
-        selectedWeeks.clear();
-        renderCalendar(billboardData[activeIndex]);
-        updateTotals();
-        
-        // Auto hide toast after 8 seconds
-        setTimeout(() => {
-          toast.classList.remove('show');
-        }, 8000);
-      });
-
-      closeToastBtn.addEventListener('click', () => {
-        toast.classList.remove('show');
-      });
-
     });
+  </script>
+</body>
+</html>
   </script>
 </body>
 </html>

@@ -231,7 +231,8 @@ header.sticky-header {
   color: var(--text-secondary);
 }
 
-.dropdown-item:hover {
+.dropdown-item:hover,
+.dropdown-item.active {
   background-color: var(--border-color);
   color: var(--accent-color);
   padding-left: 1.75rem;
@@ -2010,4 +2011,42 @@ html[data-theme="dark"] .btn-social:hover {
     padding: 0.4rem 0.9rem;
     font-size: 0.825rem;
   }
+}
+
+/* Password Visibility Toggle Component */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-wrapper .form-control {
+  padding-right: 2.75rem; /* Ensure input text doesn't hide behind icon */
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.25rem;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  z-index: 5;
+}
+
+.password-toggle-btn:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.password-toggle-btn:focus-visible {
+  outline: 2px solid var(--accent-color);
+  border-radius: 4px;
 }

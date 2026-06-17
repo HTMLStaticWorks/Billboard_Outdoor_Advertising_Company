@@ -395,3 +395,31 @@ if (budgetSlider && durationSlider && budgetValue && durationValue && calcViews 
   // Initial run
   calculateROIEstimator();
 }
+
+// Password Visibility Toggle Logic
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleButtons = document.querySelectorAll('.password-toggle-btn');
+  toggleButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const wrapper = button.closest('.password-wrapper');
+      if (!wrapper) return;
+      
+      const input = wrapper.querySelector('input');
+      const icon = button.querySelector('i');
+      if (input && icon) {
+        const isPassword = input.type === 'password';
+        input.type = isPassword ? 'text' : 'password';
+        
+        // Toggle icon classes
+        icon.classList.toggle('bi-eye', !isPassword);
+        icon.classList.toggle('bi-eye-slash', isPassword);
+        
+        // Update aria-label for accessibility
+        button.setAttribute(
+          'aria-label',
+          isPassword ? 'Hide password' : 'Show password'
+        );
+      }
+    });
+  });
+});
