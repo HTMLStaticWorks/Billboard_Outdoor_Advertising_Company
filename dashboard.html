@@ -242,9 +242,356 @@
       opacity: 0;
     }
 
+    /* Toast Panel display helper */
     .toast-panel.show {
       bottom: 20px;
       opacity: 1;
+    }
+
+    /* ==========================================================================
+       Dashboard Sidebar Layout styling
+       ========================================================================== */
+    :root {
+      --sidebar-width: 280px;
+      --topbar-height: 70px;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      min-height: 100vh;
+    }
+
+    .dashboard-container {
+      display: flex;
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    /* Sidebar Styling */
+    .dashboard-sidebar {
+      width: var(--sidebar-width);
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1050;
+      background: var(--surface-color);
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    [dir="rtl"] .dashboard-sidebar {
+      left: auto;
+      right: 0;
+      border-right: none;
+      border-left: 1px solid var(--border-color);
+    }
+
+    .sidebar-brand {
+      height: var(--topbar-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .sidebar-brand .logo-link {
+      font-size: 1.3rem;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--text-primary) !important;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .sidebar-brand .logo-link i {
+      color: var(--accent-color) !important;
+    }
+
+    .sidebar-brand .logo-link span {
+      color: var(--accent-color) !important;
+      font-weight: 700;
+    }
+
+    .sidebar-close-btn {
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 1.25rem;
+      cursor: pointer;
+      padding: 0.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .sidebar-close-btn:hover {
+      color: var(--accent-color);
+    }
+
+    .sidebar-menu {
+      flex: 1;
+      padding: 1.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      overflow-y: auto;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.85rem 1rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .menu-item i {
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .menu-item:hover {
+      color: var(--accent-color);
+      background: rgba(37, 99, 235, 0.05);
+    }
+
+    .menu-item.active {
+      color: #FFFFFF;
+      background: var(--accent-color);
+      border: 1px solid var(--accent-color);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    }
+
+    .menu-item.active i {
+      color: #FFFFFF !important;
+    }
+
+    /* Sidebar Footer Styling */
+    .sidebar-footer {
+      padding: 1.25rem;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background: rgba(0, 0, 0, 0.03);
+    }
+
+    [data-theme="dark"] .sidebar-footer {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .sidebar-actions {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+
+    .sidebar-actions .theme-toggle-btn {
+      flex: 1;
+      height: 40px;
+      border: 1px solid var(--border-color);
+      background: var(--surface-color);
+      border-radius: 6px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .sidebar-actions .theme-toggle-btn:hover {
+      background: rgba(37, 99, 235, 0.05);
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
+
+    .sidebar-user {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem;
+      border-radius: 8px;
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+    }
+
+    .user-avatar {
+      font-size: 1.8rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+    }
+
+    .user-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .user-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .user-role {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .logout-btn {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 0.25rem;
+      transition: var(--transition);
+    }
+
+    .logout-btn:hover {
+      color: #EF4444;
+    }
+
+    /* Sidebar Overlay */
+    .sidebar-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(2, 6, 23, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 1040;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .sidebar-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Main Content Styling */
+    .dashboard-main-content {
+      flex: 1;
+      margin-left: var(--sidebar-width);
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      transition: margin-left 0.3s ease, margin-right 0.3s ease;
+    }
+
+    [dir="rtl"] .dashboard-main-content {
+      margin-left: 0;
+      margin-right: var(--sidebar-width);
+    }
+
+    /* Topbar Styling */
+    .dashboard-topbar {
+      height: var(--topbar-height);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .topbar-title {
+      margin: 0;
+      font-size: 1.25rem;
+      font-family: var(--font-heading);
+      color: var(--text-primary);
+    }
+
+    .sidebar-open-btn {
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .sidebar-open-btn:hover {
+      color: var(--accent-color);
+    }
+
+    .topbar-logo-link {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary) !important;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .topbar-logo-link span {
+      color: var(--accent-color) !important;
+    }
+
+    .topbar-logo-link i {
+      color: var(--accent-color) !important;
+    }
+
+    /* Body wrapper */
+    .dashboard-body {
+      padding-bottom: 4rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 991.98px) {
+      .dashboard-sidebar {
+        transform: translateX(-100%);
+      }
+
+      [dir="rtl"] .dashboard-sidebar {
+        transform: translateX(100%);
+      }
+
+      .dashboard-sidebar.active {
+        transform: translateX(0);
+      }
+
+      .dashboard-main-content {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+      
+      .dashboard-topbar {
+        padding: 0 1.25rem;
+      }
     }
   </style>
 </head>
@@ -254,59 +601,103 @@
     <div class="spinner"></div>
   </div>
 
-  <!-- Header -->
-  <header class="sticky-header">
-    <div class="container">
-      <div class="navbar-container">
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar" id="dashboard-sidebar">
+      <div class="sidebar-brand">
         <a href="index.html" class="logo-link">
           <i class="bi bi-broadcast"></i> AD<span>VANTAGE</span>
         </a>
-        <button class="menu-toggle-btn" id="menu-toggle" aria-label="Toggle Navigation">
-          <i class="bi bi-list"></i>
+        <button class="sidebar-close-btn d-lg-none" id="sidebar-close" aria-label="Close Sidebar">
+          <i class="bi bi-x-lg"></i>
         </button>
-        <ul class="nav-links">
-          <li class="nav-item has-dropdown">
-            <a href="#" class="nav-link">Home <i class="bi bi-chevron-down"></i></a>
-            <div class="nav-dropdown">
-              <a href="index.html" class="dropdown-item">Home 1 (Enterprise)</a>
-              <a href="home-2.html" class="dropdown-item">Home 2 (Hotspots)</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a href="inventory.html" class="nav-link">Inventory</a>
-          </li>
-          <li class="nav-item">
-            <a href="digital-billboards.html" class="nav-link">Digital Billboards</a>
-          </li>
-          <li class="nav-item">
-            <a href="transit-advertising.html" class="nav-link">Transit Advertising</a>
-          </li>
-          <li class="nav-item">
-            <a href="blog.html" class="nav-link">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a href="contact.html" class="nav-link">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a href="dashboard.html" class="nav-link active">Dashboard</a>
-          </li>
-        </ul>
-        <div class="nav-actions">
+      </div>
+      
+      <nav class="sidebar-menu">
+        <a href="#overview-section" class="menu-item active">
+          <i class="bi bi-speedometer2"></i>
+          <span>Overview</span>
+        </a>
+        <a href="#locator-section" class="menu-item">
+          <i class="bi bi-map"></i>
+          <span>Location Hotspots</span>
+        </a>
+        <a href="#planner-section" class="menu-item">
+          <i class="bi bi-calendar3"></i>
+          <span>Availability Planner</span>
+        </a>
+        <a href="#upload-section" class="menu-item">
+          <i class="bi bi-cloud-arrow-up"></i>
+          <span>Ad Creative Portal</span>
+        </a>
+        <a href="#" class="menu-item dashboard-placeholder-link">
+          <i class="bi bi-bar-chart-line"></i>
+          <span>Campaign Analytics</span>
+        </a>
+        <a href="#" class="menu-item dashboard-placeholder-link">
+          <i class="bi bi-credit-card"></i>
+          <span>Billing & Invoices</span>
+        </a>
+        <a href="#" class="menu-item dashboard-placeholder-link">
+          <i class="bi bi-question-circle"></i>
+          <span>Support & RFPs</span>
+        </a>
+        <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+          <a href="index.html" class="menu-item">
+            <i class="bi bi-box-arrow-left"></i>
+            <span>Main Site Home</span>
+          </a>
+        </div>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <div class="sidebar-actions">
           <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Theme">
             <i class="bi bi-moon-stars-fill"></i>
           </button>
           <button id="rtl-toggle-btn" class="theme-toggle-btn" aria-label="Toggle RTL Layout">
             <i class="bi bi-translate"></i>
           </button>
-          <a href="login.html" class="btn btn-secondary btn-sm d-none d-md-inline-flex">Login</a>
-          <a href="signup.html" class="btn btn-highlight btn-sm glow-btn"><i class="bi bi-person-plus"></i> Signup</a>
+        </div>
+        <div class="sidebar-user">
+          <div class="user-avatar">
+            <i class="bi bi-person-circle"></i>
+          </div>
+          <div class="user-info">
+            <span class="user-name">John Doe</span>
+            <span class="user-role">Advertiser Hub</span>
+          </div>
+          <a href="login.html" class="logout-btn" title="Logout">
+            <i class="bi bi-box-arrow-right"></i>
+          </a>
         </div>
       </div>
-    </div>
-  </header>
-
-  <!-- Page Header Title -->
-  <section style="background: linear-gradient(180deg, var(--surface-color) 0%, transparent 100%); padding: 4rem 0 2rem 0;">
+    </aside>
+    
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    
+    <!-- Main content wrapper -->
+    <div class="dashboard-main-content">
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="sidebar-open-btn d-lg-none" id="sidebar-open" aria-label="Open Sidebar">
+            <i class="bi bi-list"></i>
+          </button>
+          <a href="index.html" class="topbar-logo-link d-lg-none">
+            <i class="bi bi-broadcast"></i> AD<span>VANTAGE</span>
+          </a>
+          <h3 class="topbar-title d-none d-lg-block">Advertiser Hub</h3>
+        </div>
+        
+        <div class="topbar-actions"></div>
+      </header>
+      
+      <!-- Dashboard Body Wrapper -->
+      <main class="dashboard-body">
+        <!-- Page Header Title -->
+        <section id="overview-section" style="background: linear-gradient(180deg, var(--surface-color) 0%, transparent 100%); padding: 2.5rem 0 2rem 0;">
     <div class="container text-center">
       <span class="section-subtitle">Advertiser Dashboard</span>
       <h1 class="section-title">Programmatic Campaign Hub</h1>
@@ -323,7 +714,7 @@
         <div class="col-lg-7 d-flex flex-column gap-4">
           
           <!-- Card 1: Interactive Hotspot Locator -->
-          <div class="card glass-panel p-4" style="border: 1px solid var(--border-color);">
+          <div class="card glass-panel p-4" id="locator-section" style="border: 1px solid var(--border-color);">
             <div class="d-flex align-items-center justify-content-between mb-4">
               <h4 style="margin: 0; font-family: var(--font-heading);"><i class="bi bi-map"></i> Billboard Location Hotspots</h4>
               <span style="font-size: 0.75rem; background: rgba(56,189,248,0.1); color: var(--accent-color); padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 500;">LIVE INVENTORY</span>
@@ -360,7 +751,7 @@
           </div>
           
           <!-- Card 2: Interactive Availability Calendar -->
-          <div class="card glass-panel p-4" style="border: 1px solid var(--border-color);">
+          <div class="card glass-panel p-4" id="planner-section" style="border: 1px solid var(--border-color);">
             <div class="d-flex align-items-center justify-content-between mb-2">
               <h4 style="margin: 0; font-family: var(--font-heading);"><i class="bi bi-calendar3"></i> Availability Planner</h4>
               <span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);" id="calendar-month-indicator">June 2026</span>
@@ -387,7 +778,7 @@
         
         <!-- Right Side: Ad Creative Upload Portal -->
         <div class="col-lg-5">
-          <div class="card glass-panel p-4" style="border: 1px solid var(--border-color); position: sticky; top: 100px;">
+          <div class="card glass-panel p-4" id="upload-section" style="border: 1px solid var(--border-color); position: sticky; top: 100px;">
             <h4 style="margin-bottom: 0.5rem; font-family: var(--font-heading);"><i class="bi bi-cloud-arrow-up"></i> Upload Ad Creative</h4>
             <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Upload visual content matching billboard dimensions. Fits JPG, PNG, and MP4 up to 10MB.</p>
             
@@ -447,21 +838,11 @@
     </div>
   </section>
 
-  <!-- CTA section -->
-  <section style="background-color: var(--surface-color); border-top: 1px solid var(--border-color); padding: 5rem 0;">
-    <div class="container text-center">
-      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Need Programmatic RFP Assistance?</h2>
-      <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 2.5rem auto;">
-        Get customized demographic audience target plans and custom bulk inventory pricing maps for national or global campaign designs.
-      </p>
-      <div class="d-flex justify-content-center gap-3 flex-wrap">
-        <a href="contact.html" class="btn btn-primary">Talk to an OOH Strategist</a>
-        <a href="inventory.html" class="btn btn-secondary">Search Full Catalog</a>
-      </div>
+
+
+      </main>
     </div>
-  </section>
-
-
+  </div>
 
   <!-- Glassmorphic Success Toast Panel -->
   <div class="toast-panel" id="review-success-toast">
@@ -487,6 +868,43 @@
   <script>
     // Live Dashboard Interactive Logic
     document.addEventListener('DOMContentLoaded', () => {
+      
+      // Sidebar Toggle Logic for Mobile Viewports
+      const sidebar = document.getElementById('dashboard-sidebar');
+      const sidebarOpen = document.getElementById('sidebar-open');
+      const sidebarClose = document.getElementById('sidebar-close');
+      const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+      if (sidebar && sidebarOpen && sidebarClose && sidebarOverlay) {
+        sidebarOpen.addEventListener('click', () => {
+          sidebar.classList.add('active');
+          sidebarOverlay.classList.add('active');
+        });
+
+        const closeSidebar = () => {
+          sidebar.classList.remove('active');
+          sidebarOverlay.classList.remove('active');
+        };
+
+        sidebarClose.addEventListener('click', closeSidebar);
+        sidebarOverlay.addEventListener('click', closeSidebar);
+
+        // Sidebar Menu Active State toggling on click
+        const menuItems = document.querySelectorAll('.sidebar-menu .menu-item');
+        menuItems.forEach(item => {
+          item.addEventListener('click', () => {
+            const href = item.getAttribute('href');
+            if (href && href.startsWith('#')) {
+              menuItems.forEach(mi => mi.classList.remove('active'));
+              item.classList.add('active');
+              
+              if (window.innerWidth < 992) {
+                closeSidebar();
+              }
+            }
+          });
+        });
+      }
       
       // Billboard Placements Data
       const billboardData = [

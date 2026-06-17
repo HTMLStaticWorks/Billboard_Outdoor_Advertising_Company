@@ -1,71 +1,147 @@
 console.log('=== MAIN.JS IS EXECUTING ===');
-// Mobile navigation trigger
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.querySelector('.nav-links');
 
-if (menuToggle && navLinks) {
-  menuToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    navLinks.classList.toggle('active');
-    const icon = menuToggle.querySelector('i');
-    if (icon) {
-      if (navLinks.classList.contains('active')) {
-        icon.className = 'bi bi-x-lg';
-      } else {
-        icon.className = 'bi bi-list';
-      }
-    }
-  });
-}
+// Dynamic Mobile Menu Off-Canvas Drawer Builder
+document.addEventListener('DOMContentLoaded', () => {
+  const desktopNavLinks = document.querySelector('.nav-links');
+  const desktopActions = document.querySelector('.nav-actions');
+  const menuToggle = document.getElementById('menu-toggle');
 
-// Move theme, RTL, and signup buttons inside hamburger menu drawer on mobile/tablet
-const navActions = document.querySelector('.nav-actions');
-const navbarContainer = document.querySelector('.navbar-container');
+  if (!desktopNavLinks || !menuToggle) return;
 
-function handleResponsiveMenuActions() {
-  if (!navActions || !navLinks || !navbarContainer) return;
-  const isMobile = window.innerWidth < 992;
-  const currentParent = navActions.parentElement;
-
-  if (isMobile) {
-    if (currentParent !== navLinks) {
-      navLinks.appendChild(navActions);
-    }
-  } else {
-    if (currentParent !== navbarContainer) {
-      navbarContainer.appendChild(navActions);
-    }
+  // Create overlay if it doesn't exist
+  let overlay = document.querySelector('.mobile-menu-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.className = 'mobile-menu-overlay';
+    document.body.appendChild(overlay);
   }
-}
 
-handleResponsiveMenuActions();
-window.addEventListener('resize', handleResponsiveMenuActions);
+  // Create mobile menu drawer if it doesn't exist
+  let drawer = document.querySelector('.mobile-menu');
+  if (!drawer) {
+    drawer = document.createElement('div');
+    drawer.className = 'mobile-menu';
 
-// Close nav on click outside
-document.addEventListener('click', (e) => {
-  if (navLinks && navLinks.classList.contains('active')) {
-    if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
-      navLinks.classList.remove('active');
-      const icon = menuToggle.querySelector('i');
-      if (icon) icon.className = 'bi bi-list';
-    }
+    drawer.innerHTML = `
+      <div class="mobile-menu-header">
+        <a href="index.html" class="logo-link">
+          <i class="bi bi-broadcast"></i> AD<span>VANTAGE</span>
+        </a>
+        <button class="mobile-menu-close" aria-label="Close Menu">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="mobile-menu-body">
+        <nav class="mobile-nav"></nav>
+        <div class="mobile-actions"></div>
+      </div>
+    `;
+    document.body.appendChild(drawer);
   }
-});
 
-// Dropdown trigger for mobile
-const dropdownParents = document.querySelectorAll('.nav-item.has-dropdown');
-dropdownParents.forEach(parent => {
-  const link = parent.querySelector('.nav-link');
-  const dropdown = parent.querySelector('.nav-dropdown');
+  const mobileNav = drawer.querySelector('.mobile-nav');
+  const mobileActions = drawer.querySelector('.mobile-actions');
+  const closeBtn = drawer.querySelector('.mobile-menu-close');
 
-  if (link && dropdown) {
-    link.addEventListener('click', (e) => {
-      if (window.innerWidth < 992) {
-        e.preventDefault();
-        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+  // Populate navigation links
+  if (mobileNav && mobileNav.children.length === 0) {
+    Array.from(desktopNavLinks.children).forEach(item => {
+      const clonedItem = item.cloneNode(true);
+      const link = clonedItem.querySelector('.nav-link');
+      const dropdown = clonedItem.querySelector('.nav-dropdown');
+
+      if (link && dropdown) {
+        // Dropdown styling and functionality for mobile
+        dropdown.className = 'mobile-dropdown-menu';
+
+        // Remove default hover behaviors by toggling on click
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          dropdown.classList.toggle('open');
+          const chevron = link.querySelector('.bi-chevron-down');
+          if (chevron) {
+            chevron.classList.toggle('bi-chevron-up');
+          }
+        });
       }
+      mobileNav.appendChild(clonedItem);
     });
   }
+
+  // Populate actions (Theme, RTL, and Signup)
+  if (mobileActions && mobileActions.children.length === 0 && desktopActions) {
+    const themeBtn = desktopActions.querySelector('#theme-toggle-btn');
+    const rtlBtn = desktopActions.querySelector('#rtl-toggle-btn');
+    const signupBtn = desktopActions.querySelector('a[href="signup.html"]');
+
+    if (themeBtn) {
+      const clonedTheme = themeBtn.cloneNode(true);
+      clonedTheme.removeAttribute('id'); // Avoid duplicate IDs
+      clonedTheme.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        window.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: newTheme } }));
+      });
+      mobileActions.appendChild(clonedTheme);
+    }
+
+    if (rtlBtn) {
+      const clonedRtl = rtlBtn.cloneNode(true);
+      clonedRtl.removeAttribute('id'); // Avoid duplicate IDs
+      clonedRtl.addEventListener('click', () => {
+        const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+        if (isRTL) {
+          document.documentElement.removeAttribute('dir');
+          localStorage.setItem('rtl', 'false');
+        } else {
+          document.documentElement.setAttribute('dir', 'rtl');
+          localStorage.setItem('rtl', 'true');
+        }
+      });
+      mobileActions.appendChild(clonedRtl);
+    }
+
+    if (signupBtn) {
+      const clonedSignup = signupBtn.cloneNode(true);
+      clonedSignup.className = 'btn btn-highlight w-100';
+      mobileActions.appendChild(clonedSignup);
+    }
+  }
+
+  // Event handlers to open and close the drawer
+  const openDrawer = () => {
+    drawer.classList.add('open');
+    overlay.classList.add('active');
+    document.documentElement.classList.add('menu-open');
+    document.body.classList.add('menu-open');
+  };
+
+  const closeDrawer = () => {
+    drawer.classList.remove('open');
+    overlay.classList.remove('active');
+    document.documentElement.classList.remove('menu-open');
+    document.body.classList.remove('menu-open');
+  };
+
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openDrawer();
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeDrawer();
+    });
+  }
+
+  overlay.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeDrawer();
+  });
 });
 
 // Inventory Filter Logic (Runs only on inventory.html)
@@ -120,10 +196,10 @@ if (filterForm && inventoryGrid) {
 // Campaign Booking Planner Calculator (Runs on inventory-details.html)
 const calcDuration = document.getElementById('calc-duration');
 const calcFormat = document.getElementById('calc-format');
-const calcReach = document.getElementById('calc-reach');
+const calcReachDetails = document.getElementById('calc-reach');
 const calcPrice = document.getElementById('calc-total-price');
 
-if (calcDuration && calcFormat && calcReach && calcPrice) {
+if (calcDuration && calcFormat && calcReachDetails && calcPrice) {
   const basePrices = {
     'digital-bulletin': 4500,
     'bulletin': 2200,
@@ -149,7 +225,7 @@ if (calcDuration && calcFormat && calcReach && calcPrice) {
 
     // Update values
     calcPrice.textContent = '$' + totalCost.toLocaleString();
-    calcReach.textContent = totalImpressions.toLocaleString() + ' Impressions';
+    calcReachDetails.textContent = totalImpressions.toLocaleString() + ' Impressions';
   }
 
   calcDuration.addEventListener('input', updateCalculator);
