@@ -2076,3 +2076,88 @@ html[data-theme="dark"] .btn-social:hover {
   outline: 2px solid var(--accent-color);
   border-radius: 4px;
 }
+
+/* Auth Pages Styles & Floating Toggles */
+.auth-main {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  background: radial-gradient(circle at 50% 50%, rgba(37,99,235,0.05) 0%, transparent 60%);
+}
+
+.floating-toggles {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+html[dir="rtl"] .floating-toggles {
+  right: auto;
+  left: 20px;
+}
+
+@media (max-width: 575.98px) {
+  .auth-main {
+    padding-top: 5rem;
+  }
+}
+
+/* Password Toggle RTL Support */
+html[dir="rtl"] .password-toggle-btn {
+  right: auto;
+  left: 0.75rem;
+}
+
+html[dir="rtl"] .password-wrapper .form-control {
+  padding-right: 1rem;
+  padding-left: 2.75rem;
+}
+
+/* Responsive Tables & Utilities */
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  vertical-align: middle;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table th {
+  font-weight: 600;
+  text-align: left;
+}
+
+html[dir="rtl"] .table th {
+  text-align: right;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+.text-end {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .text-end {
+  text-align: left !important;
+}
